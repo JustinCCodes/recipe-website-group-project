@@ -23,3 +23,7 @@ model Recipe {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
+
+
+// Add User model for profiles
+// Add join table to database many to many so userid and recipeid link up
