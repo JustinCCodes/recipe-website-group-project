@@ -1,0 +1,36 @@
+import { PrismaClient } from "@/generated/prisma";
+import recipesData from "./recipes.json";
+
+const prisma = new PrismaClient();
+
+async function main() {
+  console.log(`Start seeding ...`);
+
+  for (const recipe of recipesData) {
+    await prisma.recipe.create({
+      data: {
+        name: recipe.name,
+        description: recipe.description,
+        prepTime: recipe.prepTime,
+        cookTime: recipe.cookTime,
+        servings: recipe.servings,
+        category: recipe.category,
+        imageUrl: recipe.imageUrl,
+        ingredients: recipe.ingredients,
+        instructions: recipe.instructions,
+      },
+    });
+    console.log(`Created recipe with name: ${recipe.name}`);
+  }
+
+  console.log(`Seeding finished.`);
+}
+
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });

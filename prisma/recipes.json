@@ -1,0 +1,829 @@
+[
+  {
+    "name": "Spaghetti Carbonara",
+    "description": "A classic Roman pasta dish made with eggs, hard cheese, cured pork, and black pepper.",
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 4,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/spaghetti-carbonara.jpg",
+    "ingredients": [
+      "200g spaghetti",
+      "100g guanciale or pancetta, diced",
+      "2 large eggs",
+      "50g Pecorino Romano cheese, grated",
+      "Salt and freshly ground black pepper"
+    ],
+    "instructions": [
+      "Cook spaghetti according to package directions.",
+      "While pasta cooks, fry guanciale in a pan until crisp. Remove from heat.",
+      "In a bowl, whisk eggs and Pecorino cheese. Season with pepper.",
+      "Drain pasta, reserving some pasta water. Add pasta to the pan with guanciale.",
+      "Pour egg mixture over the hot pasta, stirring quickly to create a creamy sauce. Add a splash of pasta water if needed.",
+      "Serve immediately with extra cheese and pepper."
+    ]
+  },
+  {
+    "name": "Classic Tomato Soup",
+    "description": "A creamy and comforting soup made from ripe tomatoes, perfect for a cozy meal.",
+    "prepTime": 10,
+    "cookTime": 30,
+    "servings": 6,
+    "category": "Lunch",
+    "imageUrl": "https://example.com/images/tomato-soup.jpg",
+    "ingredients": [
+      "1 tbsp olive oil",
+      "1 onion, chopped",
+      "2 cloves garlic, minced",
+      "800g canned crushed tomatoes",
+      "500ml vegetable broth",
+      "100ml heavy cream",
+      "1 tsp sugar",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Heat olive oil in a large pot. Sauté onion and garlic until soft.",
+      "Add crushed tomatoes, vegetable broth, and sugar. Bring to a boil, then simmer for 20 minutes.",
+      "Use an immersion blender to blend the soup until smooth.",
+      "Stir in the heavy cream and season with salt and pepper.",
+      "Serve hot, garnished with fresh basil if desired."
+    ]
+  },
+  {
+    "name": "Guacamole",
+    "description": "A traditional Mexican dip made from mashed avocados, onion, cilantro, and lime.",
+    "prepTime": 15,
+    "cookTime": 0,
+    "servings": 4,
+    "category": "Appetizer",
+    "imageUrl": "https://example.com/images/guacamole.jpg",
+    "ingredients": [
+      "3 ripe avocados",
+      "1/2 small red onion, finely chopped",
+      "1 jalapeño, seeded and minced",
+      "1/4 cup fresh cilantro, chopped",
+      "Juice of 1 lime",
+      "1/2 tsp salt"
+    ],
+    "instructions": [
+      "Cut avocados in half, remove pits, and scoop the flesh into a bowl.",
+      "Mash the avocado with a fork to your desired consistency.",
+      "Stir in the red onion, jalapeño, cilantro, lime juice, and salt.",
+      "Mix well to combine. Taste and adjust seasoning if necessary.",
+      "Serve immediately with tortilla chips."
+    ]
+  },
+  {
+    "name": "Lemon Herb Roasted Chicken",
+    "description": "A juicy and flavorful whole roasted chicken with a crispy, golden-brown skin.",
+    "prepTime": 20,
+    "cookTime": 75,
+    "servings": 4,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/roast-chicken.jpg",
+    "ingredients": [
+      "1 whole chicken (about 1.5kg)",
+      "1 lemon, halved",
+      "4 cloves garlic, smashed",
+      "2 tbsp olive oil",
+      "1 tbsp fresh rosemary, chopped",
+      "1 tbsp fresh thyme, chopped",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Preheat oven to 200°C (400°F).",
+      "Pat the chicken dry with paper towels. Season generously inside and out with salt and pepper.",
+      "Stuff the chicken cavity with the lemon halves and smashed garlic.",
+      "In a small bowl, mix olive oil, rosemary, and thyme. Rub the mixture all over the outside of the chicken.",
+      "Place the chicken in a roasting pan and roast for 1 hour and 15 minutes, or until the juices run clear.",
+      "Let the chicken rest for 10 minutes before carving."
+    ]
+  },
+  {
+    "name": "Chocolate Chip Cookies",
+    "description": "The ultimate soft and chewy chocolate chip cookies, packed with gooey chocolate chips.",
+    "prepTime": 15,
+    "cookTime": 12,
+    "servings": 24,
+    "category": "Dessert",
+    "imageUrl": "https://example.com/images/chocolate-chip-cookies.jpg",
+    "ingredients": [
+      "250g all-purpose flour",
+      "1/2 tsp baking soda",
+      "1/2 tsp salt",
+      "170g unsalted butter, melted",
+      "200g brown sugar",
+      "100g granulated sugar",
+      "1 large egg + 1 egg yolk",
+      "2 tsp vanilla extract",
+      "200g chocolate chips"
+    ],
+    "instructions": [
+      "Preheat oven to 165°C (325°F). Line baking sheets with parchment paper.",
+      "In a medium bowl, whisk together flour, baking soda, and salt.",
+      "In a large bowl, whisk melted butter, brown sugar, and granulated sugar until combined.",
+      "Whisk in the egg, egg yolk, and vanilla extract.",
+      "Gradually add the dry ingredients to the wet ingredients and mix until just combined. Stir in chocolate chips.",
+      "Drop rounded tablespoons of dough onto the prepared baking sheets.",
+      "Bake for 10-12 minutes, or until the edges are golden brown.",
+      "Let cool on the baking sheet for a few minutes before transferring to a wire rack."
+    ]
+  },
+  {
+    "name": "Fluffy Pancakes",
+    "description": "Light, airy, and delicious pancakes that are perfect for a weekend breakfast.",
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 4,
+    "category": "Breakfast",
+    "imageUrl": "https://example.com/images/pancakes.jpg",
+    "ingredients": [
+      "200g all-purpose flour",
+      "2 tbsp sugar",
+      "1 tbsp baking powder",
+      "1/2 tsp salt",
+      "240ml milk",
+      "1 large egg",
+      "2 tbsp unsalted butter, melted"
+    ],
+    "instructions": [
+      "In a large bowl, whisk together flour, sugar, baking powder, and salt.",
+      "In a separate bowl, whisk together milk and egg, then stir in the melted butter.",
+      "Pour the wet ingredients into the dry ingredients and stir until just combined. Do not overmix.",
+      "Heat a lightly oiled griddle or frying pan over medium-high heat.",
+      "Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake.",
+      "Cook until bubbles appear on the surface, then flip and cook until golden brown.",
+      "Serve warm with your favorite toppings."
+    ]
+  },
+  {
+    "name": "Beef Tacos",
+    "description": "Quick and easy ground beef tacos seasoned with a homemade spice blend.",
+    "prepTime": 10,
+    "cookTime": 20,
+    "servings": 4,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/beef-tacos.jpg",
+    "ingredients": [
+      "500g ground beef",
+      "1 onion, chopped",
+      "2 cloves garlic, minced",
+      "1 tbsp chili powder",
+      "1 tsp cumin",
+      "1/2 tsp paprika",
+      "1/4 tsp oregano",
+      "Salt and pepper to taste",
+      "8 taco shells",
+      "Toppings: lettuce, tomato, cheese, sour cream"
+    ],
+    "instructions": [
+      "In a large skillet, cook the ground beef and onion over medium heat until the beef is browned. Drain off excess fat.",
+      "Stir in the garlic, chili powder, cumin, paprika, oregano, salt, and pepper. Cook for 2 more minutes.",
+      "Add 1/2 cup of water, bring to a simmer, and cook until the liquid has reduced.",
+      "Warm the taco shells according to package directions.",
+      "Fill the shells with the beef mixture and your favorite toppings."
+    ]
+  },
+  {
+    "name": "Caesar Salad",
+    "description": "A classic salad of romaine lettuce and croutons dressed with a creamy, tangy dressing.",
+    "prepTime": 20,
+    "cookTime": 5,
+    "servings": 4,
+    "category": "Lunch",
+    "imageUrl": "https://example.com/images/caesar-salad.jpg",
+    "ingredients": [
+      "1 large head of romaine lettuce, chopped",
+      "1 cup croutons",
+      "50g Parmesan cheese, shaved",
+      "For the dressing:",
+      "2 anchovy fillets, minced",
+      "2 cloves garlic, minced",
+      "1 egg yolk",
+      "1 tbsp Dijon mustard",
+      "2 tbsp lemon juice",
+      "120ml olive oil"
+    ],
+    "instructions": [
+      "To make the dressing, whisk together the anchovy, garlic, egg yolk, mustard, and lemon juice in a bowl.",
+      "Slowly stream in the olive oil while whisking constantly until the dressing is emulsified.",
+      "In a large bowl, combine the chopped romaine lettuce and croutons.",
+      "Pour the dressing over the salad and toss to coat.",
+      "Top with shaved Parmesan cheese and serve immediately."
+    ]
+  },
+  {
+    "name": "Chicken Alfredo Pasta",
+    "description": "Creamy, rich, and satisfying fettuccine alfredo with tender chicken breast.",
+    "prepTime": 15,
+    "cookTime": 25,
+    "servings": 4,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/chicken-alfredo.jpg",
+    "ingredients": [
+      "2 boneless, skinless chicken breasts, cubed",
+      "250g fettuccine pasta",
+      "2 tbsp butter",
+      "2 cloves garlic, minced",
+      "240ml heavy cream",
+      "50g grated Parmesan cheese",
+      "Salt and black pepper to taste",
+      "Fresh parsley, chopped for garnish"
+    ],
+    "instructions": [
+      "Cook fettuccine according to package directions. Drain and set aside.",
+      "Season chicken with salt and pepper. In a large skillet, melt 1 tbsp of butter and cook chicken until golden and cooked through. Remove chicken from skillet.",
+      "In the same skillet, melt the remaining butter. Add garlic and cook until fragrant.",
+      "Stir in the heavy cream and bring to a simmer. Cook for 2-3 minutes until it slightly thickens.",
+      "Stir in the Parmesan cheese until melted and the sauce is smooth. Season with salt and pepper.",
+      "Add the cooked pasta and chicken back to the skillet. Toss to coat.",
+      "Garnish with fresh parsley and serve hot."
+    ]
+  },
+  {
+    "name": "Margherita Pizza",
+    "description": "A simple yet delicious pizza topped with tomato sauce, fresh mozzarella, and basil.",
+    "prepTime": 20,
+    "cookTime": 15,
+    "servings": 2,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/margherita-pizza.jpg",
+    "ingredients": [
+      "1 pizza dough (store-bought or homemade)",
+      "120ml tomato sauce",
+      "150g fresh mozzarella cheese, sliced",
+      "Handful of fresh basil leaves",
+      "1 tbsp olive oil",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Preheat your oven to the highest temperature, usually 250°C (475°F).",
+      "Stretch the pizza dough into your desired shape on a floured surface.",
+      "Spread the tomato sauce evenly over the dough, leaving a small border.",
+      "Arrange the mozzarella slices on top of the sauce.",
+      "Bake for 10-15 minutes, or until the crust is golden and the cheese is bubbly and melted.",
+      "Remove from the oven, drizzle with olive oil, and top with fresh basil leaves. Season with a pinch of salt."
+    ]
+  },
+  {
+    "name": "Mango Smoothie",
+    "description": "A refreshing and tropical smoothie made with sweet mangoes and creamy yogurt.",
+    "prepTime": 5,
+    "cookTime": 0,
+    "servings": 2,
+    "category": "Breakfast",
+    "imageUrl": "https://example.com/images/mango-smoothie.jpg",
+    "ingredients": [
+      "1 ripe mango, peeled and chopped",
+      "120ml plain yogurt",
+      "60ml milk",
+      "1 tbsp honey (optional)",
+      "A few ice cubes"
+    ],
+    "instructions": [
+      "Place the chopped mango, yogurt, milk, honey (if using), and ice cubes into a blender.",
+      "Blend on high until smooth and creamy.",
+      "Pour into glasses and serve immediately."
+    ]
+  },
+  {
+    "name": "French Toast",
+    "description": "Classic French toast made with thick slices of bread soaked in a sweet egg custard.",
+    "prepTime": 5,
+    "cookTime": 10,
+    "servings": 2,
+    "category": "Breakfast",
+    "imageUrl": "https://example.com/images/french-toast.jpg",
+    "ingredients": [
+      "4 slices of thick-cut bread (like brioche or challah)",
+      "2 large eggs",
+      "60ml milk or cream",
+      "1 tbsp sugar",
+      "1/2 tsp cinnamon",
+      "1/4 tsp vanilla extract",
+      "1 tbsp butter for cooking"
+    ],
+    "instructions": [
+      "In a shallow dish, whisk together eggs, milk, sugar, cinnamon, and vanilla extract.",
+      "Dip each slice of bread into the egg mixture, allowing it to soak for about 20-30 seconds per side.",
+      "Melt butter in a large skillet or griddle over medium heat.",
+      "Place the soaked bread slices on the skillet and cook for 2-3 minutes per side, until golden brown.",
+      "Serve warm with maple syrup, fresh fruit, or powdered sugar."
+    ]
+  },
+  {
+    "name": "Shrimp Scampi",
+    "description": "A quick and elegant pasta dish featuring succulent shrimp in a garlic-butter and white wine sauce.",
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 2,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/shrimp-scampi.jpg",
+    "ingredients": [
+      "200g linguine pasta",
+      "2 tbsp olive oil",
+      "4 cloves garlic, minced",
+      "450g large shrimp, peeled and deveined",
+      "60ml dry white wine (like Pinot Grigio)",
+      "Juice of 1/2 lemon",
+      "2 tbsp butter",
+      "2 tbsp fresh parsley, chopped",
+      "Red pepper flakes to taste"
+    ],
+    "instructions": [
+      "Cook linguine according to package directions.",
+      "While pasta is cooking, heat olive oil in a large skillet over medium heat. Add garlic and cook for 1 minute until fragrant.",
+      "Add shrimp and cook for 2-3 minutes until they turn pink. Do not overcook.",
+      "Pour in the white wine and lemon juice, and bring to a simmer. Season with salt, pepper, and red pepper flakes.",
+      "Stir in the butter and parsley until the butter is melted.",
+      "Add the drained pasta to the skillet and toss to combine.",
+      "Serve immediately."
+    ]
+  },
+  {
+    "name": "Vegetable Stir-Fry",
+    "description": "A healthy and colorful stir-fry packed with fresh vegetables and a savory sauce.",
+    "prepTime": 15,
+    "cookTime": 10,
+    "servings": 4,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/vegetable-stir-fry.jpg",
+    "ingredients": [
+      "1 tbsp vegetable oil",
+      "1 head of broccoli, cut into florets",
+      "1 bell pepper, sliced",
+      "1 carrot, julienned",
+      "100g snow peas",
+      "For the sauce:",
+      "60ml soy sauce",
+      "2 tbsp honey or maple syrup",
+      "1 tbsp rice vinegar",
+      "1 tsp sesame oil",
+      "1 clove garlic, minced",
+      "1 tsp cornstarch"
+    ],
+    "instructions": [
+      "In a small bowl, whisk together all the sauce ingredients.",
+      "Heat vegetable oil in a large wok or skillet over high heat.",
+      "Add broccoli, bell pepper, and carrot. Stir-fry for 3-4 minutes until crisp-tender.",
+      "Add the snow peas and stir-fry for another 1-2 minutes.",
+      "Pour the sauce over the vegetables and cook, stirring constantly, until the sauce thickens and coats the vegetables.",
+      "Serve immediately over rice or noodles."
+    ]
+  },
+  {
+    "name": "Classic Apple Pie",
+    "description": "A timeless dessert with a flaky, buttery crust and a sweet, spiced apple filling.",
+    "prepTime": 30,
+    "cookTime": 50,
+    "servings": 8,
+    "category": "Dessert",
+    "imageUrl": "https://example.com/images/apple-pie.jpg",
+    "ingredients": [
+      "1 package (2 sheets) refrigerated pie crust",
+      "6-7 medium apples, peeled, cored, and sliced",
+      "150g granulated sugar",
+      "2 tbsp all-purpose flour",
+      "1 tsp ground cinnamon",
+      "1/4 tsp ground nutmeg",
+      "1 tbsp lemon juice",
+      "2 tbsp butter, cut into small pieces"
+    ],
+    "instructions": [
+      "Preheat oven to 220°C (425°F).",
+      "In a large bowl, toss the apple slices with sugar, flour, cinnamon, nutmeg, and lemon juice.",
+      "Place one pie crust in the bottom of a 9-inch pie plate. Fill with the apple mixture.",
+      "Dot the top of the filling with the pieces of butter.",
+      "Place the second crust over the filling. Trim, seal, and flute the edges. Cut several slits in the top crust to allow steam to escape.",
+      "Bake for 15 minutes. Reduce oven temperature to 190°C (375°F) and continue to bake for 35-45 minutes, or until the crust is golden and the filling is bubbly.",
+      "Let cool on a wire rack before serving."
+    ]
+  },
+  {
+    "name": "Hearty Beef Stew",
+    "description": "A rich and savory stew with tender beef, potatoes, carrots, and peas in a flavorful gravy.",
+    "prepTime": 25,
+    "cookTime": 150,
+    "servings": 6,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/beef-stew.jpg",
+    "ingredients": [
+      "1kg beef chuck, cut into 1-inch cubes",
+      "1/4 cup all-purpose flour",
+      "2 tbsp olive oil",
+      "1 large onion, chopped",
+      "2 carrots, sliced",
+      "2 celery stalks, sliced",
+      "4 cloves garlic, minced",
+      "750ml beef broth",
+      "250ml dry red wine",
+      "1 tbsp tomato paste",
+      "1 tsp dried thyme",
+      "2 bay leaves",
+      "500g potatoes, peeled and cubed"
+    ],
+    "instructions": [
+      "Toss beef with flour, salt, and pepper.",
+      "In a large Dutch oven, heat olive oil. Brown the beef in batches and set aside.",
+      "Add onion, carrots, and celery to the pot and cook until softened.",
+      "Stir in garlic and tomato paste and cook for 1 minute.",
+      "Pour in the red wine to deglaze the pot. Bring to a simmer.",
+      "Return beef to the pot. Add beef broth, thyme, and bay leaves. Bring to a simmer, then cover and cook on low heat for 2 hours.",
+      "Add potatoes and continue to cook for another 45-60 minutes, until beef and potatoes are tender.",
+      "Remove bay leaves before serving."
+    ]
+  },
+  {
+    "name": "Classic Lasagna",
+    "description": "Layers of pasta, rich meat sauce, creamy béchamel, and melted cheese baked to perfection.",
+    "prepTime": 30,
+    "cookTime": 60,
+    "servings": 8,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/lasagna.jpg",
+    "ingredients": [
+      "500g ground beef",
+      "1 onion, chopped",
+      "800g canned crushed tomatoes",
+      "2 cloves garlic, minced",
+      "1 tsp dried oregano",
+      "12 lasagna noodles, cooked",
+      "500g ricotta cheese",
+      "1 egg",
+      "50g grated Parmesan cheese",
+      "300g shredded mozzarella cheese"
+    ],
+    "instructions": [
+      "Preheat oven to 190°C (375°F).",
+      "In a large skillet, cook ground beef and onion until browned. Stir in garlic, crushed tomatoes, and oregano. Simmer for 15 minutes.",
+      "In a bowl, mix ricotta cheese, egg, and Parmesan cheese.",
+      "To assemble, spread a thin layer of meat sauce in a 9x13 inch baking dish. Arrange a layer of noodles, followed by a layer of the ricotta mixture, and a layer of mozzarella.",
+      "Repeat the layers, ending with meat sauce and a generous layer of mozzarella on top.",
+      "Cover with foil and bake for 25 minutes. Remove foil and bake for another 25 minutes until golden and bubbly.",
+      "Let stand for 10 minutes before serving."
+    ]
+  },
+  {
+    "name": "Quiche Lorraine",
+    "description": "A savory French tart with a bacon, egg, and cheese custard filling in a flaky pastry crust.",
+    "prepTime": 20,
+    "cookTime": 40,
+    "servings": 6,
+    "category": "Breakfast",
+    "imageUrl": "https://example.com/images/quiche-lorraine.jpg",
+    "ingredients": [
+      "1 unbaked 9-inch pie crust",
+      "150g bacon, cooked and crumbled",
+      "100g Gruyère cheese, shredded",
+      "3 large eggs",
+      "350ml heavy cream or half-and-half",
+      "1/4 tsp salt",
+      "1/8 tsp cayenne pepper",
+      "Pinch of nutmeg"
+    ],
+    "instructions": [
+      "Preheat oven to 200°C (400°F).",
+      "Press the pie crust into a 9-inch pie plate. Prick the bottom with a fork.",
+      "Sprinkle the crumbled bacon and shredded cheese evenly over the bottom of the crust.",
+      "In a medium bowl, whisk together the eggs, cream, salt, cayenne pepper, and nutmeg.",
+      "Carefully pour the egg mixture over the bacon and cheese.",
+      "Bake for 15 minutes. Then, reduce the oven temperature to 150°C (300°F) and bake for another 30-40 minutes, or until a knife inserted into the center comes out clean.",
+      "Let cool for 10 minutes before slicing and serving."
+    ]
+  },
+  {
+    "name": "Blueberry Muffins",
+    "description": "Moist and fluffy muffins bursting with fresh blueberries and topped with a crumbly streusel.",
+    "prepTime": 15,
+    "cookTime": 25,
+    "servings": 12,
+    "category": "Breakfast",
+    "imageUrl": "https://example.com/images/blueberry-muffins.jpg",
+    "ingredients": [
+      "250g all-purpose flour",
+      "150g sugar",
+      "2 tsp baking powder",
+      "1/2 tsp salt",
+      "120ml vegetable oil",
+      "1 large egg",
+      "120ml milk",
+      "200g fresh or frozen blueberries"
+    ],
+    "instructions": [
+      "Preheat oven to 200°C (400°F). Grease or line a 12-cup muffin tin.",
+      "In a large bowl, whisk together flour, sugar, baking powder, and salt.",
+      "In a separate bowl, whisk together oil, egg, and milk.",
+      "Pour the wet ingredients into the dry ingredients and stir until just combined.",
+      "Gently fold in the blueberries.",
+      "Divide the batter evenly among the muffin cups.",
+      "Bake for 20-25 minutes, or until a toothpick inserted into the center comes out clean.",
+      "Let cool in the tin for a few minutes before transferring to a wire rack."
+    ]
+  },
+  {
+    "name": "Fish and Chips",
+    "description": "Crispy beer-battered fish served with thick-cut fried potatoes, a British classic.",
+    "prepTime": 20,
+    "cookTime": 30,
+    "servings": 4,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/fish-and-chips.jpg",
+    "ingredients": [
+      "4 large potatoes, cut into thick strips",
+      "1 liter vegetable oil for frying",
+      "200g all-purpose flour",
+      "1 tsp baking powder",
+      "1/2 tsp salt",
+      "240ml cold beer",
+      "4 white fish fillets (cod or haddock)",
+      "Lemon wedges and tartar sauce for serving"
+    ],
+    "instructions": [
+      "Soak potatoes in cold water for 30 minutes, then pat dry.",
+      "Heat oil in a deep fryer or large pot to 160°C (320°F). Fry potatoes in batches for 5-7 minutes until soft but not browned. Remove and drain.",
+      "Increase oil temperature to 190°C (375°F).",
+      "In a bowl, whisk together flour, baking powder, and salt. Gradually whisk in the cold beer until you have a smooth batter.",
+      "Pat fish fillets dry and dip them into the batter, coating completely.",
+      "Carefully place battered fish into the hot oil and fry for 5-8 minutes, until golden and crispy. Remove and drain.",
+      "Return the potatoes to the hot oil and fry for another 2-3 minutes until golden and crisp.",
+      "Serve the fish and chips immediately with lemon wedges and tartar sauce."
+    ]
+  },
+  {
+    "name": "Chicken Noodle Soup",
+    "description": "A comforting and healing soup with tender chicken, vegetables, and egg noodles.",
+    "prepTime": 15,
+    "cookTime": 40,
+    "servings": 6,
+    "category": "Lunch",
+    "imageUrl": "https://example.com/images/chicken-noodle-soup.jpg",
+    "ingredients": [
+      "1 tbsp olive oil",
+      "1 onion, chopped",
+      "2 carrots, sliced",
+      "2 celery stalks, sliced",
+      "2 chicken breasts, cooked and shredded",
+      "1.5 liters chicken broth",
+      "150g egg noodles",
+      "1 bay leaf",
+      "Salt and pepper to taste",
+      "Fresh parsley, chopped"
+    ],
+    "instructions": [
+      "Heat olive oil in a large pot. Sauté onion, carrots, and celery until tender.",
+      "Add chicken broth and bay leaf. Bring to a boil.",
+      "Stir in the egg noodles and cook for 6-8 minutes, or until tender.",
+      "Add the shredded chicken and heat through.",
+      "Remove the bay leaf. Season with salt and pepper.",
+      "Garnish with fresh parsley before serving."
+    ]
+  },
+  {
+    "name": "Classic Potato Salad",
+    "description": "A creamy and tangy potato salad perfect for picnics and barbecues.",
+    "prepTime": 20,
+    "cookTime": 20,
+    "servings": 8,
+    "category": "Side Dish",
+    "imageUrl": "https://example.com/images/potato-salad.jpg",
+    "ingredients": [
+      "1kg potatoes, peeled and cubed",
+      "4 hard-boiled eggs, chopped",
+      "1 celery stalk, finely chopped",
+      "1/2 red onion, finely chopped",
+      "200g mayonnaise",
+      "2 tbsp white vinegar",
+      "1 tbsp Dijon mustard",
+      "Salt and pepper to taste",
+      "Paprika for garnish"
+    ],
+    "instructions": [
+      "Place potatoes in a large pot of salted water. Bring to a boil and cook until tender, about 15-20 minutes. Drain and let cool.",
+      "In a large bowl, combine the cooled potatoes, chopped eggs, celery, and red onion.",
+      "In a separate small bowl, whisk together mayonnaise, vinegar, and mustard.",
+      "Pour the dressing over the potato mixture and stir gently to combine.",
+      "Season with salt and pepper. Chill for at least 1 hour before serving.",
+      "Garnish with a sprinkle of paprika."
+    ]
+  },
+  {
+    "name": "Pulled Pork Sandwiches",
+    "description": "Tender, slow-cooked pork shoulder shredded and tossed in barbecue sauce, served on a bun.",
+    "prepTime": 15,
+    "cookTime": 480,
+    "servings": 8,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/pulled-pork.jpg",
+    "ingredients": [
+      "2kg pork shoulder",
+      "2 tbsp brown sugar",
+      "1 tbsp paprika",
+      "1 tbsp chili powder",
+      "2 tsp garlic powder",
+      "1 tsp salt",
+      "1/2 tsp black pepper",
+      "240ml barbecue sauce",
+      "8 hamburger buns"
+    ],
+    "instructions": [
+      "In a small bowl, mix together brown sugar, paprika, chili powder, garlic powder, salt, and pepper.",
+      "Rub the spice mixture all over the pork shoulder.",
+      "Place the pork in a slow cooker. Cook on low for 8-10 hours or on high for 4-5 hours, until the pork is tender and falls apart easily.",
+      "Remove the pork from the slow cooker and shred it using two forks. Discard any excess fat.",
+      "Return the shredded pork to the slow cooker and stir in the barbecue sauce. Cook on low for another 30 minutes.",
+      "Serve the pulled pork on hamburger buns."
+    ]
+  },
+  {
+    "name": "Caprese Salad",
+    "description": "A simple Italian salad, made of sliced fresh mozzarella, tomatoes, and sweet basil.",
+    "prepTime": 10,
+    "cookTime": 0,
+    "servings": 4,
+    "category": "Appetizer",
+    "imageUrl": "https://example.com/images/caprese-salad.jpg",
+    "ingredients": [
+      "4 ripe tomatoes, sliced",
+      "225g fresh mozzarella cheese, sliced",
+      "1/4 cup fresh basil leaves",
+      "2 tbsp extra virgin olive oil",
+      "1 tbsp balsamic glaze",
+      "Salt and freshly ground black pepper"
+    ],
+    "instructions": [
+      "On a platter, arrange alternating slices of tomatoes and mozzarella.",
+      "Tuck the fresh basil leaves in between the slices.",
+      "Drizzle with olive oil and balsamic glaze.",
+      "Season with salt and pepper to taste.",
+      "Serve immediately."
+    ]
+  },
+  {
+    "name": "Classic Banana Bread",
+    "description": "A moist and delicious banana bread that's easy to make and perfect for using up ripe bananas.",
+    "prepTime": 10,
+    "cookTime": 60,
+    "servings": 10,
+    "category": "Breakfast",
+    "imageUrl": "https://example.com/images/banana-bread.jpg",
+    "ingredients": [
+      "3 ripe bananas, mashed",
+      "115g unsalted butter, melted",
+      "150g granulated sugar",
+      "1 large egg, beaten",
+      "1 tsp vanilla extract",
+      "250g all-purpose flour",
+      "1 tsp baking soda",
+      "1/2 tsp salt"
+    ],
+    "instructions": [
+      "Preheat oven to 175°C (350°F). Grease a 9x5 inch loaf pan.",
+      "In a large bowl, mix the mashed bananas and melted butter.",
+      "Stir in the sugar, egg, and vanilla extract.",
+      "In a separate bowl, whisk together the flour, baking soda, and salt.",
+      "Add the dry ingredients to the wet ingredients and stir until just combined.",
+      "Pour the batter into the prepared loaf pan.",
+      "Bake for 55-65 minutes, or until a toothpick inserted into the center comes out clean.",
+      "Let cool in the pan for 10 minutes before transferring to a wire rack to cool completely."
+    ]
+  },
+  {
+    "name": "Fettuccine with Pesto",
+    "description": "A simple yet flavorful pasta dish with vibrant basil pesto, cherry tomatoes, and Parmesan.",
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 4,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/pesto-pasta.jpg",
+    "ingredients": [
+      "400g fettuccine pasta",
+      "150g basil pesto (store-bought or homemade)",
+      "200g cherry tomatoes, halved",
+      "50g grated Parmesan cheese",
+      "2 tbsp pine nuts, toasted",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Cook fettuccine according to package directions. Reserve 1/2 cup of pasta water before draining.",
+      "In a large bowl, combine the hot, drained pasta with the pesto.",
+      "Add a splash of the reserved pasta water to help the pesto coat the pasta, creating a creamy sauce.",
+      "Stir in the halved cherry tomatoes and half of the Parmesan cheese.",
+      "Season with salt and pepper.",
+      "Serve topped with the remaining Parmesan cheese and toasted pine nuts."
+    ]
+  },
+  {
+    "name": "Chili Con Carne",
+    "description": "A spicy and hearty stew containing chili peppers, meat, tomatoes, and kidney beans.",
+    "prepTime": 15,
+    "cookTime": 90,
+    "servings": 6,
+    "category": "Dinner",
+    "imageUrl": "https://example.com/images/chili-con-carne.jpg",
+    "ingredients": [
+      "500g ground beef",
+      "1 large onion, chopped",
+      "2 cloves garlic, minced",
+      "1 red bell pepper, chopped",
+      "2 tbsp chili powder",
+      "1 tbsp cumin",
+      "1 tsp oregano",
+      "800g canned diced tomatoes",
+      "400g canned kidney beans, rinsed and drained"
+    ],
+    "instructions": [
+      "In a large pot or Dutch oven, brown the ground beef with the onion over medium heat. Drain fat.",
+      "Stir in garlic and bell pepper and cook for 5 minutes.",
+      "Add chili powder, cumin, and oregano, and cook for 1 minute.",
+      "Stir in the diced tomatoes (with their juice) and kidney beans.",
+      "Bring to a boil, then reduce heat, cover, and simmer for at least 1 hour, stirring occasionally.",
+      "Serve hot with toppings like sour cream, shredded cheese, or chopped green onions."
+    ]
+  },
+  {
+    "name": "Greek Salad",
+    "description": "A refreshing salad with crisp lettuce, tomatoes, cucumbers, olives, and feta cheese in a lemon-herb vinaigrette.",
+    "prepTime": 15,
+    "cookTime": 0,
+    "servings": 4,
+    "category": "Lunch",
+    "imageUrl": "https://example.com/images/greek-salad.jpg",
+    "ingredients": [
+      "1 head of romaine lettuce, chopped",
+      "2 tomatoes, chopped",
+      "1 cucumber, sliced",
+      "1/2 red onion, thinly sliced",
+      "100g Kalamata olives",
+      "150g feta cheese, crumbled",
+      "For the vinaigrette:",
+      "60ml extra virgin olive oil",
+      "3 tbsp red wine vinegar",
+      "1 tsp dried oregano",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "In a small bowl, whisk together the olive oil, red wine vinegar, oregano, salt, and pepper to make the vinaigrette.",
+      "In a large salad bowl, combine the lettuce, tomatoes, cucumber, and red onion.",
+      "Pour the vinaigrette over the vegetables and toss to combine.",
+      "Gently stir in the Kalamata olives and crumbled feta cheese.",
+      "Serve immediately."
+    ]
+  },
+  {
+    "name": "Oatmeal Raisin Cookies",
+    "description": "Soft, chewy, and spiced oatmeal cookies loaded with sweet raisins.",
+    "prepTime": 15,
+    "cookTime": 12,
+    "servings": 24,
+    "category": "Dessert",
+    "imageUrl": "https://example.com/images/oatmeal-raisin-cookies.jpg",
+    "ingredients": [
+      "150g all-purpose flour",
+      "1 tsp ground cinnamon",
+      "1/2 tsp baking soda",
+      "1/2 tsp salt",
+      "115g unsalted butter, softened",
+      "150g brown sugar",
+      "50g granulated sugar",
+      "1 large egg",
+      "1 tsp vanilla extract",
+      "270g rolled oats",
+      "150g raisins"
+    ],
+    "instructions": [
+      "Preheat oven to 175°C (350°F). Line baking sheets with parchment paper.",
+      "In a medium bowl, whisk together flour, cinnamon, baking soda, and salt.",
+      "In a large bowl, beat the butter, brown sugar, and granulated sugar with a mixer until creamy.",
+      "Beat in the egg and vanilla extract.",
+      "Gradually add the dry ingredients and mix on low speed until just combined.",
+      "Stir in the rolled oats and raisins.",
+      "Drop rounded tablespoons of dough onto the prepared baking sheets.",
+      "Bake for 10-12 minutes, or until the edges are golden.",
+      "Let cool on the baking sheet for a few minutes before transferring to a wire rack."
+    ]
+  },
+  {
+    "name": "Perfect Scrambled Eggs",
+    "description": "Creamy, fluffy, and perfectly cooked scrambled eggs for a quick and satisfying breakfast.",
+    "prepTime": 2,
+    "cookTime": 5,
+    "servings": 2,
+    "category": "Breakfast",
+    "imageUrl": "https://example.com/images/scrambled-eggs.jpg",
+    "ingredients": [
+      "4 large eggs",
+      "60ml milk or cream",
+      "1 tbsp butter",
+      "Salt and freshly ground black pepper to taste",
+      "1 tbsp chives, chopped (optional)"
+    ],
+    "instructions": [
+      "In a medium bowl, crack the eggs. Add the milk, salt, and pepper. Whisk until the mixture is uniform and slightly frothy.",
+      "Melt the butter in a non-stick skillet over medium-low heat.",
+      "Pour the egg mixture into the skillet. Let it sit for about 20-30 seconds until the edges begin to set.",
+      "Using a spatula, gently push the eggs from the edges toward the center, creating soft curds.",
+      "Continue cooking, stirring gently, until the eggs are cooked to your desired doneness.",
+      "Remove from heat, stir in the chives if using, and serve immediately."
+    ]
+  }
+]
