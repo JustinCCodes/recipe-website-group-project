@@ -1,7 +1,5 @@
-import { PrismaClient } from "@/generated/prisma";
+import { prisma } from "@/lib/prisma";
 import recipesData from "./recipes.json";
-
-const prisma = new PrismaClient();
 
 async function main() {
   console.log(`Start seeding ...`);

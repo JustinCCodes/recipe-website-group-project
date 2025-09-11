@@ -1,3 +1,16 @@
-export default function Register() {
-  return <h1>Register</h1>;
+import { getSession } from "@/lib/session";
+import { redirect } from "next/navigation";
+import RegisterForm from "./RegisterForm";
+
+export default async function RegisterPage() {
+  // Check for active session
+  const session = await getSession();
+
+  // If user logged in redirect them
+  if (session) {
+    redirect("/profile");
+  }
+
+  // If no session show login form
+  return <RegisterForm />;
 }
