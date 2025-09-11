@@ -1,3 +1,16 @@
-export default function Login() {
-  return <h1>Login</h1>;
+import { getSession } from "@/lib/session";
+import { redirect } from "next/navigation";
+import LoginForm from "./LoginForm";
+
+export default async function LoginPage() {
+  // Check for active session
+  const session = await getSession();
+
+  // If user logged in redirect them
+  if (session) {
+    redirect("/home");
+  }
+
+  // If no session show login form
+  return <LoginForm />;
 }

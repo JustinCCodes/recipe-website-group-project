@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Types
 interface NavItemProps {
   text: string;
   isActive: boolean;
@@ -14,19 +15,21 @@ const NavItem: React.FC<NavItemProps> = ({ text, isActive, onClick }) => {
     <motion.button
       onTap={onClick}
       whileTap={{ scale: 0.95 }}
-      className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors duration-300 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900
-        ${isActive ? "text-white" : "text-gray-400 hover:text-white"}
+      className={`
+        relative px-4 py-2 text-sm font-medium whitespace-nowrap
+        transition-colors duration-300
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400
+        after:content-[''] after:absolute after:left-0 after:-bottom-1
+        after:h-[2px] after:bg-white after:transition-all after:duration-300
+        hover:after:w-full
+        ${
+          isActive
+            ? "text-white after:w-1/2 after:left-1/2 after:-translate-x-1/2"
+            : "text-gray-400 hover:text-white after:w-0"
+        }
       `}
     >
-      <span className="relative z-10">{text}</span>
-      {isActive && (
-        <motion.div
-          layoutId="active-pill"
-          className="absolute inset-0 bg-indigo-600 rounded-full"
-          style={{ borderRadius: 9999 }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        />
-      )}
+      {text}
     </motion.button>
   );
 };
