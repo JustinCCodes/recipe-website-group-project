@@ -6,11 +6,17 @@
 
 'use client';
 
+import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function CreateRecipe() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const isProd = process.env.NODE_ENV === 'production';
+  const mock = !isProd && searchParams.get('mock') === '1';
+
+
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -37,6 +43,8 @@ export default function CreateRecipe() {
     e.preventDefault();
     setError('');
     setSuccess('');
+    
+    if (mock) { router.push('/cookbook?mock=1'); return; }
 
     // Minimal client-side validation
     if (!name.trim()) return setError('Name is required.');
