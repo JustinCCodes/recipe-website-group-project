@@ -42,6 +42,8 @@ export default function CookbookPage() {
   const searchParams = useSearchParams();
   const isProd = process.env.NODE_ENV === 'production';
   const mock = !isProd && searchParams.get('mock') === '1';
+  const suffix = mock ? '?mock=1' : '';
+
 
   const [items, setItems] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState(true);
@@ -98,7 +100,7 @@ export default function CookbookPage() {
     <main className="mx-auto max-w-5xl p-6 space-y-6">
       <header className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold">Your Cookbook</h1>
-        <Link href="/create-recipe" className="border rounded px-4 py-2">Create recipe</Link>
+        <Link href={`/create-recipe${suffix}`} className="border rounded px-4 py-2">Create recipe</Link>
       </header>
 
       {loading && <p>Loading recipes…</p>}
@@ -121,7 +123,7 @@ export default function CookbookPage() {
                     {r.prepTime + r.cookTime} min • {r.category}
                   </p>
                   <div className="flex gap-3">
-                    <Link href={`/edit-recipe?id=${r.id}`} className="underline">Edit</Link>
+                    <Link href={`/edit-recipe?id=${r.id}${suffix}`} className="underline">Edit</Link>
                     <button onClick={() => onDelete(r.id)} className="underline text-red-600">
                       Delete
                     </button>
