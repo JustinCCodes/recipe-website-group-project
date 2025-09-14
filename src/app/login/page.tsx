@@ -1,6 +1,6 @@
 import { getSession } from "@/lib/session";
 import { redirect } from "next/navigation";
-import LoginForm from "./LoginForm";
+import LoginForm from "@/features/auth/components/LoginForm";
 
 export default async function LoginPage() {
   // Check for active session
