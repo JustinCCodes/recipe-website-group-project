@@ -1,48 +1,46 @@
 import { z } from "zod";
 
-// Zod schema for validating recipe data
 export const recipeSchema = z.object({
-  // Name must be a string with at least 3 characters
+  id: z.number().int(),
   name: z.string().min(3, { message: "Name must be at least 3 characters." }),
-  // Description must be at least 10 characters
   description: z.string().min(10, { message: "Description is too short." }),
-
-  // Prep time must be a positive integer
-  prepTime: z.coerce
-    .number()
-    .int()
-    .positive({ message: "Must be a positive number." }),
-
-  // Cook time must be a positive integer
-  cookTime: z.coerce
-    .number()
-    .int()
-    .positive({ message: "Must be a positive number." }),
-
-  // Servings must be a positive integer
-  servings: z.coerce
-    .number()
-    .int()
-    .positive({ message: "Must be a positive number." }),
-
-  // Category is required
+  mediaUrl: z.string().url({ message: "Must be a valid URL." }),
+  mediaType: z.enum(["video", "gif"]),
+  durationSec: z.number().int().positive().optional().nullable(),
+  likes: z.number().int().nonnegative().optional().nullable(),
+  prepTime: z.coerce.number().int().positive(),
+  cookTime: z.coerce.number().int().positive(),
+  servings: z.coerce.number().int().positive(),
   category: z.string().min(1, { message: "Category is required." }),
-
-  // Must be a valid URL string
-  imageUrl: z.string().url({ message: "Must be a valid URL." }),
-
-  // Ingredients string (later split into an array)
   ingredients: z.string().min(1, { message: "Ingredients cannot be empty." }),
-
-  // Instructions string (later split into an array)
   instructions: z.string().min(1, { message: "Instructions cannot be empty." }),
 });
 
-// Type for state returned by create/update
+export type Recipe = z.infer<typeof recipeSchema>;
+
 export type RecipeFormState = {
-  message?: string; // General error or success message
+  message?: string;
   errors?: {
-    // Field level errors mapped from zod validation
     [key in keyof z.infer<typeof recipeSchema>]?: string[];
   };
 };
+
+export const recipeCardSchema = recipeSchema
+  .pick({
+    id: true,
+    name: true,
+    mediaUrl: true,
+    mediaType: true,
+    durationSec: true,
+    likes: true,
+  })
+  .transform((data) => ({
+    title: data.name,
+    id: String(data.id),
+    mediaUrl: data.mediaUrl,
+    mediaType: data.mediaType,
+    durationSec: data.durationSec,
+    likes: data.likes,
+  }));
+
+export type RecipeCard = z.infer<typeof recipeCardSchema>;

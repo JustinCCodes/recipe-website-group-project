@@ -4,14 +4,10 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/session";
-import { recipeSchema, type RecipeFormState } from "./types";
+import { recipeSchema, type RecipeFormState, recipeCardSchema } from "./types";
 
 /**
  * Server Action to create a new recipe
- * Validates input data with Zod schema
- * Splits comma separated ingredients/instructions into arrays
- * Persists recipe to database with Prisma
- * Revalidates /recipes page and redirects after success
  */
 export async function createRecipe(
   prevState: RecipeFormState,
@@ -22,16 +18,9 @@ export async function createRecipe(
     return { message: "You must be logged in to create a recipe." };
   }
 
-  // Extract fields that will be processed separate as comma separated lists
-  const ingredients = formData.get("ingredients") as string;
-  const instructions = formData.get("instructions") as string;
-
-  // Validate all fields with schema
-  const validatedFields = recipeSchema.safeParse({
-    ...Object.fromEntries(formData.entries()),
-    ingredients,
-    instructions,
-  });
+  const validatedFields = recipeSchema.safeParse(
+    Object.fromEntries(formData.entries())
+  );
 
   if (!validatedFields.success) {
     return {
@@ -41,7 +30,6 @@ export async function createRecipe(
   }
 
   try {
-    // Destructure validated data
     const {
       name,
       description,
@@ -49,7 +37,10 @@ export async function createRecipe(
       cookTime,
       servings,
       category,
-      imageUrl,
+      mediaUrl,
+      mediaType,
+      ingredients,
+      instructions,
     } = validatedFields.data;
 
     // Insert recipe into DB
@@ -61,7 +52,9 @@ export async function createRecipe(
         cookTime,
         servings,
         category,
-        imageUrl,
+        mediaUrl,
+        mediaType,
+
         // Convert comma separated strings to trimmed arrays
         ingredients: ingredients.split(",").map((item) => item.trim()),
         instructions: instructions.split(",").map((item) => item.trim()),
@@ -72,16 +65,12 @@ export async function createRecipe(
     return { message: "Failed to create recipe. Please try again." };
   }
 
-  // Revalidate recipes page to show new recipe
   revalidatePath("/recipes");
   redirect("/recipes");
 }
 
 /**
  * Server Action to delete a recipe by ID
- * Requires logged in user
- * Removes recipe from DB
- * Revalidates /recipes page and redirects
  */
 export async function deleteRecipe(id: number) {
   const session = await getSession();
@@ -96,7 +85,40 @@ export async function deleteRecipe(id: number) {
     return { message: "Failed to delete recipe." };
   }
 
-  // Revalidate and redirect
   revalidatePath("/recipes");
   redirect("/recipes");
+}
+
+/**
+ * Server Action for the feed component to fetch recipes
+ */
+export async function getFeedRecipesAction(cursor?: number, take: number = 5) {
+  try {
+    const recipesFromDb = await prisma.recipe.findMany({
+      take,
+      skip: cursor ? 1 : 0,
+      cursor: cursor ? { id: cursor } : undefined,
+      orderBy: {
+        id: "desc",
+      },
+      select: {
+        id: true,
+        name: true,
+        mediaUrl: true,
+        mediaType: true,
+        durationSec: true,
+        likes: true,
+      },
+    });
+
+    const items = recipesFromDb.map((recipe) => recipeCardSchema.parse(recipe));
+
+    const nextId = items.length === take ? items[take - 1].id : null;
+    const nextCursor = nextId ? Number(nextId) : null;
+
+    return { items, nextCursor };
+  } catch (error) {
+    console.error("Failed to fetch feed recipes:", error);
+    return { items: [], nextCursor: null };
+  }
 }

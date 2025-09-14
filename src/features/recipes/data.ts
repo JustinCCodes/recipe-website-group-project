@@ -17,8 +17,8 @@ export async function getAllRecipes() {
 }
 
 /**
- * Fetches a single recipe by its ID.
- * @param id The ID of the recipe to fetch.
+ * Fetches single recipe by its ID
+ * @param id The ID of the recipe to fetch
  */
 export async function getRecipeById(id: number) {
   try {

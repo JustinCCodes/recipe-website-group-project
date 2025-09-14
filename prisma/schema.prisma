@@ -10,18 +10,24 @@ datasource db {
 }
 
 model Recipe {
-  id           Int          @id @default(autoincrement())
-  name         String       @unique
+  id           Int      @id @default(autoincrement())
+  name         String   @unique
   description  String
+
+  mediaUrl     String   @default("https://via.placeholder.com/400.mp4")
+  mediaType    String   @default("video")
+
+  durationSec  Int?
+  likes        Int?
+
   prepTime     Int
   cookTime     Int
   servings     Int
   category     String
-  imageUrl     String
   ingredients  String[]
   instructions String[]
-  createdAt    DateTime     @default(now())
-  updatedAt    DateTime     @updatedAt
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
   users        RecipeUser[]
 }
 
