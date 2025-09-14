@@ -3,8 +3,14 @@ import { logout } from "@/app/actions";
 import { redirect } from "next/navigation";
 import UserAvatar from "@/components/ui/UserAvatar";
 
+/**
+ * ProfilePage Component
+ * Displays user's profile information and account actions
+ */
 export default async function ProfilePage() {
+  // Fetch the current user session
   const session = await getSession();
+  // If no session exists redirect to login page
   if (!session) {
     redirect("/login");
   }
@@ -13,25 +19,28 @@ export default async function ProfilePage() {
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      {/* Header */}
+      {/* Header Section*/}
       <header className="flex items-center space-x-4 p-4">
         <div className="avatar">
           <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <UserAvatar name={user.username} />
+            <UserAvatar name={user.username} size="lg" />
           </div>
         </div>
+
+        {/* User Info */}
         <div className="flex-grow">
           <h1 className="text-2xl font-bold">{user.username || "New User"}</h1>
           <p className="text-sm text-gray-400">{user.email}</p>
         </div>
 
-        {/* Settings */}
+        {/* Settings Dropdown */}
         <div className="dropdown dropdown-end">
           <button
             tabIndex={0}
             role="button"
             className="btn btn-ghost btn-circle"
           >
+            {/* Settings Icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -53,6 +62,8 @@ export default async function ProfilePage() {
               />
             </svg>
           </button>
+
+          {/* Dropdown Menu */}
           <ul
             tabIndex={0}
             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
@@ -60,10 +71,13 @@ export default async function ProfilePage() {
             <li>
               <a>Account Settings</a>
             </li>
+
             <li>
               <a>Privacy</a>
             </li>
+
             <li>
+              {/* Logout action using form submit */}
               <form action={logout} className="w-full">
                 <button type="submit" className="w-full text-left">
                   Logout
