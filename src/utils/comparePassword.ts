@@ -11,7 +11,7 @@ const scryptAsync = promisify(scrypt);
  * @param suppliedPassword Password provided by user during login
  * @returns True if the passwords match false otherwise
  * Hashes the supplied password with saved salt
- * If hash matches saved hash the password is correct.
+ * If hash matches saved hash the password is correct
  */
 export default async function comparePassword(
   savedHash: string,

@@ -1,5 +1,5 @@
-import FloatingSearchButton from "@/components/ui/SearchButton";
-import Feed from "../components/feed/Feed";
+import FloatingSearchButton from "@/app/ui/SearchButton";
+import Feed from "../features/feed/Feed";
 
 export default function HomePage() {
   return (
@@ -9,4 +9,3 @@ export default function HomePage() {
     </main>
   );
 }
-

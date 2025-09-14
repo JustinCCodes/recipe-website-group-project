@@ -1,7 +1,7 @@
 import { getSession } from "@/lib/session";
 import { logout } from "@/app/actions";
 import { redirect } from "next/navigation";
-import UserAvatar from "@/components/ui/UserAvatar";
+import UserAvatar from "@/app/ui/UserAvatar";
 
 /**
  * ProfilePage Component

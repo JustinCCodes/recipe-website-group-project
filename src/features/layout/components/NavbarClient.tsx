@@ -1,6 +1,6 @@
 "use client";
 
-import UserAvatar from "@/components/ui/UserAvatar";
+import UserAvatar from "@/app/ui/UserAvatar";
 import { NavbarButton } from "./NavbarButton";
 
 type Session = { user: { username: string | null } } | null;
