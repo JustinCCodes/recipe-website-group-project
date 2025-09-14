@@ -1,13 +1,11 @@
 import FloatingSearchButton from "@/components/ui/SearchButton";
+import Feed from "../components/feed/Feed";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8">
+    <main className="relative">
       <FloatingSearchButton />
-      <div className="text-center">
-        <h1 className="text-5xl font-bold">Welcome</h1>
-        <p className="py-6">Discover and share recipes.</p>
-      </div>
+      <Feed />
     </main>
   );
 }
