@@ -31,6 +31,7 @@ export default function EditRecipePage() {
   // was: const mock = searchParams.get('mock') === '1';
   const isProd = process.env.NODE_ENV === 'production';
   const mock = !isProd && searchParams.get('mock') === '1';
+  const suffix = mock ? '?mock=1' : '';
 
 
 
@@ -118,7 +119,7 @@ export default function EditRecipePage() {
   async function onSave(e: React.FormEvent) {
     e.preventDefault();
     setError('');
-    if (mock) { router.push('/cookbook'); return; }
+    if (mock) { router.push(`/cookbook${suffix}`); return; }
 
     if (!id) return setError('Missing recipe id.');
 
@@ -157,7 +158,7 @@ export default function EditRecipePage() {
 
   async function onDelete() {
     setError('');
-    if (mock) { router.push('/cookbook'); return; }
+    if (mock) { router.push(`/cookbook${suffix}`); return; }
 
     if (!id) return setError('Missing recipe id.');
     if (!confirm('Delete this recipe? This cannot be undone.')) return;
