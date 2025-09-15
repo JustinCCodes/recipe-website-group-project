@@ -47,7 +47,6 @@ export default function CookbookPage() {
   const mock = !isProd && searchParams.get('mock') === '1';
   const suffix = mock ? '?mock=1' : '';
 
-
   const [items, setItems] = useState<RecipeWithHistory[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
@@ -77,6 +76,7 @@ export default function CookbookPage() {
               return h?.share ? {...r, history: h} : r;
             })
           );
+
         } else {
           const res = await fetch('/api/recipes', { cache: 'no-store' });
           if (!res.ok) {
