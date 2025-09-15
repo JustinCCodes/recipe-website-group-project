@@ -15,6 +15,9 @@ type Recipe = {
   category: string;
 };
 
+type History = {share: boolean; text: string};
+type RecipeWithHistory = Recipe & {history?: History};
+
 const MOCK_RECIPES: Recipe[] = [
   {
     id: 101,
@@ -44,10 +47,20 @@ export default function CookbookPage() {
   const mock = !isProd && searchParams.get('mock') === '1';
   const suffix = mock ? '?mock=1' : '';
 
-
-  const [items, setItems] = useState<Recipe[]>([]);
+  const [items, setItems] = useState<RecipeWithHistory[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
+
+  function readHistory(r: Recipe): History | null {
+    try {
+      const byId = localStorage.getItem(`history:di:${r.id}`);
+      const byName = localStorage.getItem(`history:name:${r.name.trim().toLowerCase()}`);
+      const raw = byId || byName;
+      return raw ? (JSON.parse(raw) as History) : null;
+    } catch {
+      return null
+    }
+  }
 
   useEffect(() => {
     let mounted = true;
@@ -57,7 +70,13 @@ export default function CookbookPage() {
       try {
         if (mock) {
           if (!mounted) return;
-          setItems(MOCK_RECIPES);
+          setItems(
+            MOCK_RECIPES.map((r) => {
+              const h = readHistory(r);
+              return h?.share ? {...r, history: h} : r;
+            })
+          );
+
         } else {
           const res = await fetch('/api/recipes', { cache: 'no-store' });
           if (!res.ok) {
@@ -66,7 +85,12 @@ export default function CookbookPage() {
           }
           const data: Recipe[] = await res.json();
           if (!mounted) return;
-          setItems(data);
+          setItems(
+            data.map((r) => {
+              const h = readHistory(r);
+              return h?.share ? {...r, history:h} :r;
+            })
+          );
         }
       } catch (e: any) {
         if (mounted) setError(String(e?.message || e));
@@ -122,6 +146,11 @@ export default function CookbookPage() {
                   <p className="text-xs text-gray-500">
                     {r.prepTime + r.cookTime} min • {r.category}
                   </p>
+
+                  {r.history?.share && (
+                    <p className="text-xs text-blue-700 bg-blue-50 rounded px-2 py-1"> 📝 {r.history.text} </p>
+                  )}
+
                   <div className="flex gap-3">
                     <Link href={`/edit-recipe?id=${r.id}${suffix}`} className="underline">Edit</Link>
                     <button onClick={() => onDelete(r.id)} className="underline text-red-600">
