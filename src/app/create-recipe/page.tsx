@@ -32,6 +32,10 @@ export default function CreateRecipe() {
   const [error, setError] = useState<string>('');
   const [success, setSuccess] = useState<string>('');
 
+  const [shareHistory, setShareHistory] = useState(false);
+  const [historyText, setHistoryText] = useState('');
+
+
   function linesToArray(text: string) {
     return text
       .split('\n')
@@ -44,7 +48,21 @@ export default function CreateRecipe() {
     setError('');
     setSuccess('');
     
-    if (mock) { router.push('/cookbook?mock=1'); return; }
+    if (mock) {
+      try {
+        const nameKey = `history:name:${name.trim().toLowerCase()}`;
+        if (shareHistory) {
+          localStorage.setItem(
+            nameKey,
+            JSON.stringify({share: true, text: historyText})
+          );
+        } else {
+          localStorage.removeItem(nameKey);
+        }
+      } catch {}
+        router.push('/cookbook?mock=1');
+        return
+    }
 
     // Minimal client-side validation
     if (!name.trim()) return setError('Name is required.');
@@ -87,6 +105,39 @@ export default function CreateRecipe() {
       // Created successfully
       setSuccess('Recipe created!');
       // Option: route to your cookbook page
+
+      // DEV-ONLY: store history locally so you can demo it without backend changes
+      try {
+        const nameKey = `history:name:${name.trim().toLowerCase()}`;
+        let idKey = nameKey;
+
+        // If the response body has the created recipe (in real, non-mock flow), prefer id-based key.
+        try {
+          const created = await res.clone().json();
+          if (created?.id) idKey = `history:id:${created.id}`;
+        } catch {
+          /* ignore if mock mode or body already read elsewhere */
+        }
+
+        if (shareHistory) {
+          localStorage.setItem(
+            idKey,
+            JSON.stringify({ share: true, text: historyText })
+          );
+          // Keep a name-based copy too (helps match mock items by name)
+          localStorage.setItem(
+            nameKey,
+            JSON.stringify({ share: true, text: historyText })
+          );
+        } else {
+          localStorage.removeItem(idKey);
+          localStorage.removeItem(nameKey);
+        }
+      } catch {
+        /* ignore localStorage errors */
+      }
+
+
       router.push('/cookbook');
     } catch (err: any) {
       // Prisma unique name errors currently return 500 in your API
@@ -206,6 +257,26 @@ export default function CreateRecipe() {
             placeholder={`Boil pasta in salted water.\nSauté garlic in oil; add tomatoes.\nStir in cream; toss with pasta; season.`}
             required
           />
+        </div>
+
+        <div className='space-y-2 border-t pt-4'>
+          <label className="flex items-center gap-2">
+            <input
+            type="checkbox"
+            checked={shareHistory}
+            onChange={(e) => setShareHistory(e.target.checked)}
+            />
+            <span>Share history:</span>
+          </label>
+
+          <label className="block text-sm font-medium"> History (optional)</label>
+          <textarea
+          className="mt-1 w-full border rounded px-3 py-2"
+          rows={4}
+          value={historyText}
+          onChange={(e) => setHistoryText(e.target.value)}
+          placeholder='Where this recipe comes from, family notes, tips…'
+          disabled={!shareHistory} />
         </div>
 
         <button
