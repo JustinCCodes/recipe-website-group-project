@@ -1,14 +1,7 @@
-/* export default function CreateRecipe() {
-  // look at "zod" and "react-hook-form" libarys might be useful
-  return <h1>Create Recipe</h1>;
-}
- */
-
 'use client';
 
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 export default function CreateRecipe() {
   const router = useRouter();
@@ -16,8 +9,7 @@ export default function CreateRecipe() {
   const isProd = process.env.NODE_ENV === 'production';
   const mock = !isProd && searchParams.get('mock') === '1';
 
-
-
+  // form state
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [prepTime, setPrepTime] = useState<number | ''>('');
@@ -28,6 +20,10 @@ export default function CreateRecipe() {
   const [ingredientsText, setIngredientsText] = useState('');   // one per line
   const [instructionsText, setInstructionsText] = useState(''); // one per line
 
+  const [shareHistory, setShareHistory] = useState(false);
+  const [historyText, setHistoryText] = useState('');
+
+  // ui state
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string>('');
   const [success, setSuccess] = useState<string>('');
@@ -35,7 +31,7 @@ export default function CreateRecipe() {
   function linesToArray(text: string) {
     return text
       .split('\n')
-      .map(s => s.trim())
+      .map((s) => s.trim())
       .filter(Boolean);
   }
 
@@ -43,10 +39,25 @@ export default function CreateRecipe() {
     e.preventDefault();
     setError('');
     setSuccess('');
-    
-    if (mock) { router.push('/cookbook?mock=1'); return; }
 
-    // Minimal client-side validation
+    // DEV-ONLY: mock path — save history locally, then navigate
+    if (mock) {
+      try {
+        const nameKey = `history:name:${name.trim().toLowerCase()}`;
+        if (shareHistory) {
+          localStorage.setItem(
+            nameKey,
+            JSON.stringify({ share: true, text: historyText })
+          );
+        } else {
+          localStorage.removeItem(nameKey);
+        }
+      } catch {}
+      router.push('/cookbook?mock=1');
+      return;
+    }
+
+    // client-side validation
     if (!name.trim()) return setError('Name is required.');
     const ingredients = linesToArray(ingredientsText);
     const instructions = linesToArray(instructionsText);
@@ -84,12 +95,26 @@ export default function CreateRecipe() {
         throw new Error(txt || 'Failed to create recipe');
       }
 
-      // Created successfully
+      // success
       setSuccess('Recipe created!');
-      // Option: route to your cookbook page
+
+      // DEV-ONLY: if backend returns created id, store history by id and name
+      try {
+        const created = await res.clone().json().catch(() => null);
+        const idKey = created?.id ? `history:id:${created.id}` : null;
+        const nameKey = `history:name:${name.trim().toLowerCase()}`;
+        if (shareHistory) {
+          const json = JSON.stringify({ share: true, text: historyText });
+          if (idKey) localStorage.setItem(idKey, json);
+          localStorage.setItem(nameKey, json);
+        } else {
+          if (idKey) localStorage.removeItem(idKey);
+          localStorage.removeItem(nameKey);
+        }
+      } catch {}
+
       router.push('/cookbook');
     } catch (err: any) {
-      // Prisma unique name errors currently return 500 in your API
       const msg = String(err?.message || err || 'Failed to create recipe');
       setError(msg.includes('Unique') ? 'Name already exists. Pick another.' : msg);
     } finally {
@@ -134,7 +159,9 @@ export default function CreateRecipe() {
               type="number"
               className="mt-1 w-full border rounded px-3 py-2"
               value={prepTime}
-              onChange={(e) => setPrepTime(e.target.value === '' ? '' : Number(e.target.value))}
+              onChange={(e) =>
+                setPrepTime(e.target.value === '' ? '' : Number(e.target.value))
+              }
               min={0}
               inputMode="numeric"
             />
@@ -145,7 +172,9 @@ export default function CreateRecipe() {
               type="number"
               className="mt-1 w-full border rounded px-3 py-2"
               value={cookTime}
-              onChange={(e) => setCookTime(e.target.value === '' ? '' : Number(e.target.value))}
+              onChange={(e) =>
+                setCookTime(e.target.value === '' ? '' : Number(e.target.value))
+              }
               min={0}
               inputMode="numeric"
             />
@@ -156,7 +185,9 @@ export default function CreateRecipe() {
               type="number"
               className="mt-1 w-full border rounded px-3 py-2"
               value={servings}
-              onChange={(e) => setServings(e.target.value === '' ? '' : Number(e.target.value))}
+              onChange={(e) =>
+                setServings(e.target.value === '' ? '' : Number(e.target.value))
+              }
               min={1}
               inputMode="numeric"
             />
@@ -205,6 +236,27 @@ export default function CreateRecipe() {
             onChange={(e) => setInstructionsText(e.target.value)}
             placeholder={`Boil pasta in salted water.\nSauté garlic in oil; add tomatoes.\nStir in cream; toss with pasta; season.`}
             required
+          />
+        </div>
+
+        <div className="space-y-2 border-t pt-4">
+          <label className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              checked={shareHistory}
+              onChange={(e) => setShareHistory(e.target.checked)}
+            />
+            <span>Share history:</span>
+          </label>
+
+          <label className="block text-sm font-medium">History (optional)</label>
+          <textarea
+            className="mt-1 w-full border rounded px-3 py-2"
+            rows={4}
+            value={historyText}
+            onChange={(e) => setHistoryText(e.target.value)}
+            placeholder="Where this recipe comes from, family notes, tips…"
+            disabled={!shareHistory}
           />
         </div>
 
