@@ -56,7 +56,7 @@ export default function Feed() {
   return (
     <div
       ref={containerRef}
-      className="h-screen w-screen overflow-y-scroll sbap-y snap-mandatory scroll-smooth"
+      className="h-screen w-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth"
     >
       {items.map((it, i) => (
         <FeedItem key={it.id} data={it} active={i === activeIdx} />

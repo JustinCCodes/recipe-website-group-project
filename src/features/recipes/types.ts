@@ -4,7 +4,7 @@ export const recipeSchema = z.object({
   id: z.number().int(),
   name: z.string().min(3, { message: "Name must be at least 3 characters." }),
   description: z.string().min(10, { message: "Description is too short." }),
-  mediaUrl: z.string().url({ message: "Must be a valid URL." }),
+  mediaUrl: z.string().min(1, { message: "Media URL cannot be empty." }),
   mediaType: z.enum(["video", "gif"]),
   durationSec: z.number().int().positive().optional().nullable(),
   likes: z.number().int().nonnegative().optional().nullable(),

@@ -29,14 +29,11 @@ export default function NavbarClient({ session }: { session: Session }) {
             </svg>
           </NavbarButton>
 
-          {/* Placeholder */}
-          <button
-            className="flex flex-col items-center justify-center text-xs text-gray-400 w-16"
-            disabled
-          >
+          {/* Discover Button */}
+          <NavbarButton href="/discover" label="Discover">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 opacity-30"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -45,11 +42,10 @@ export default function NavbarClient({ session }: { session: Session }) {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
               />
             </svg>
-            <span className="opacity-30">Explore</span>
-          </button>
+          </NavbarButton>
 
           {/* Create Button */}
           <NavbarButton href="/create-recipe" label="Create">

@@ -1,12 +1,20 @@
-// Single recipe search result from database
+// Recipe returned from main search
 export type RecipeSearchResult = {
   id: number;
   name: string;
   description: string;
 };
 
-// Autocomplete/Search suggestion
+// Autocomplete suggestion
 export type Suggestion = {
   value: string;
   type: "history" | "recipe";
+};
+
+// Single item in combined history list
+export type UnifiedHistoryItem = {
+  id: string;
+  query: string;
+  createdAt: Date;
+  source: "history" | "log";
 };

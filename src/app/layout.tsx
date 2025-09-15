@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen bg-slate-800 text-white">
+      <body>
         {/* Page content goes here */}
         <main>{children}</main>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 interface NavbarButtonProps {
   href: string; // Destination route
@@ -16,11 +16,15 @@ interface NavbarButtonProps {
  */
 export function NavbarButton({ href, label, children }: NavbarButtonProps) {
   const router = useRouter();
+  const pathname = usePathname();
+  const isActive = pathname === href;
 
   return (
     <button
       onClick={() => router.push(href)}
-      className="flex flex-col items-center justify-center text-xs text-gray-400 transition-colors w-16"
+      className={`flex flex-col items-center justify-center text-xs w-16 transition active:scale-95 ${
+        isActive ? "text-white" : "text-gray-400"
+      }`}
     >
       {/* Icon */}
       {children}

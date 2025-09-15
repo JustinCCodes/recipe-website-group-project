@@ -1,17 +1,54 @@
+import "server-only";
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/session";
 import { decrypt } from "@/lib/encryption";
-import type { RecipeSearchResult, Suggestion } from "./types";
+import type { RecipeSearchResult, UnifiedHistoryItem } from "./types";
 
 /**
- * Searches for recipes by name, description, or ingredients.
- * Replaces /api/recipes/search
+ * Creates a sorted unified list of all search history and logs
+ */
+export async function getUnifiedSearchHistory(): Promise<UnifiedHistoryItem[]> {
+  const session = await getSession();
+  if (!session?.userId) return [];
+
+  try {
+    const history = await prisma.searchHistory.findMany({
+      where: { userId: session.userId },
+      select: { id: true, query: true, createdAt: true },
+    });
+    const log = await prisma.searchLog.findMany({
+      where: { userId: session.userId },
+      select: { id: true, query: true, createdAt: true },
+    });
+
+    const combined = [
+      ...history.map((item) => ({
+        ...item,
+        query: decrypt(item.query),
+        source: "history" as const,
+      })),
+      ...log.map((item) => ({
+        ...item,
+        query: decrypt(item.query),
+        source: "log" as const,
+      })),
+    ];
+
+    combined.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+    return combined;
+  } catch (error) {
+    console.error("Failed to fetch unified search history:", error);
+    return [];
+  }
+}
+
+/**
+ * Searches for recipes by name description or ingredients
  */
 export async function searchRecipes(
   query: string
 ): Promise<RecipeSearchResult[]> {
   if (!query) return [];
-
   try {
     const recipes = await prisma.recipe.findMany({
       where: {
@@ -21,7 +58,7 @@ export async function searchRecipes(
           { ingredients: { has: query.toLowerCase() } },
         ],
       },
-      select: { id: true, name: true, description: true }, // Select only needed fields
+      select: { id: true, name: true, description: true },
     });
     return recipes;
   } catch (error) {
@@ -31,13 +68,11 @@ export async function searchRecipes(
 }
 
 /**
- * Fetches the user's search history.
- * Replaces GET /api/user/search-history
+ * Fetches user's recent unique search history
  */
 export async function getSearchHistory(): Promise<string[]> {
   const session = await getSession();
   if (!session?.userId) return [];
-
   try {
     const history = await prisma.searchHistory.findMany({
       where: { userId: session.userId },
@@ -47,32 +82,6 @@ export async function getSearchHistory(): Promise<string[]> {
     return history.map((item) => decrypt(item.query));
   } catch (error) {
     console.error("Database Error: Failed to fetch search history.", error);
-    return [];
-  }
-}
-
-/**
- * Fetches the user's full, non-unique search log.
- * Replaces GET /api/user/search-log
- */
-export async function getSearchLog() {
-  const session = await getSession();
-  if (!session?.userId) return [];
-
-  try {
-    const log = await prisma.searchLog.findMany({
-      where: { userId: session.userId },
-      orderBy: { createdAt: "desc" },
-      take: 100,
-    });
-
-    // Decrypt query for each log entry
-    return log.map((item) => ({
-      ...item,
-      query: decrypt(item.query),
-    }));
-  } catch (error) {
-    console.error("Database Error: Failed to fetch search log.", error);
     return [];
   }
 }

@@ -39,7 +39,7 @@ export default function SearchBar({ onQueryChange }: SearchBarProps) {
   }, [inputValue, onQueryChange]);
 
   /**
-   * Keep input state in sync with URL param
+   * Keeps input state in sync with URL param
    * For navigating back/forward or submitting search
    */
   useEffect(() => {

@@ -1,9 +1,9 @@
 import { Suspense } from "react";
-import { searchRecipes, getSearchHistory } from "@/features/search/data";
+import { searchRecipes, getUnifiedSearchHistory } from "@/features/search/data";
 import SearchClient from "@/features/search/components/SearchClient";
 import SearchPageSkeleton from "@/features/search/components/SearchPageSkeleton";
 
-// Ensure page always fetches fresh data
+// Ensure page always fetches fresh data (needed cause some TypeScript issue)
 export const dynamic = "force-dynamic";
 
 interface SearchPageProps {
@@ -26,7 +26,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   // Fetch results + history
   const [initialResults, initialHistory] = await Promise.all([
     searchRecipes(query),
-    getSearchHistory(),
+    getUnifiedSearchHistory(),
   ]);
 
   return (

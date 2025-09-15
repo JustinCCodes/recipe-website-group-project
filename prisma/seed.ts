@@ -13,8 +13,8 @@ async function main() {
         cookTime: recipe.cookTime,
         servings: recipe.servings,
         category: recipe.category,
-        mediaUrl: recipe.imageUrl,
-        mediaType: "gif",
+        mediaUrl: recipe.mediaUrl,
+        mediaType: recipe.mediaType,
 
         ingredients: recipe.ingredients,
         instructions: recipe.instructions,
