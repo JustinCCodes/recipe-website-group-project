@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/features/layout/components/Navbar";
 
+/**
+ * Global head metadata
+ */
 export const metadata: Metadata = {
   title: "Recipe Website",
   description: "Recipes of all sorts",
 };
 
+/**
+ * RootLayout
+ * Wraps the entire app in consistent HTML structure
+ * Applies global styles (fonts, background, colors)
+ * Renders Navbar at the bottom of every page
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -14,10 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen bg-slate-800 text-white">
-        <main className="flex-grow container mx-auto p-4 md:p-8 pb-20">
-          {children}
-        </main>
+      <body>
+        {/* Page content goes here */}
+        <main>{children}</main>
+
+        {/* Persistent bottom navigation */}
         <Navbar />
       </body>
     </html>

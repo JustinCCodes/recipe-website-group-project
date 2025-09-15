@@ -13,7 +13,9 @@ async function main() {
         cookTime: recipe.cookTime,
         servings: recipe.servings,
         category: recipe.category,
-        imageUrl: recipe.imageUrl,
+        mediaUrl: recipe.mediaUrl,
+        mediaType: recipe.mediaType,
+
         ingredients: recipe.ingredients,
         instructions: recipe.instructions,
       },

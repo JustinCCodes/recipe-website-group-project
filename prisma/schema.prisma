@@ -10,37 +10,62 @@ datasource db {
 }
 
 model Recipe {
-  id           Int          @id @default(autoincrement())
-  name         String       @unique
+  id           Int      @id @default(autoincrement())
+  name         String   @unique
   description  String
+
+  mediaUrl     String   @default("https://via.placeholder.com/400.mp4")
+  mediaType    String   @default("video")
+
+  durationSec  Int?
+  likes        Int?
+
   prepTime     Int
   cookTime     Int
   servings     Int
   category     String
-  imageUrl     String
   ingredients  String[]
   instructions String[]
-  createdAt    DateTime     @default(now())
-  updatedAt    DateTime     @updatedAt
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
   users        RecipeUser[]
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
-  salt      String
+  id            Int      @id @default(autoincrement())
+  email         String   @unique
+  password      String
+  salt          String
+  username      String
+  birthdate     DateTime
+  phone         String?
+  country       String
+  searchHistory SearchHistory[]
+  searchLog     SearchLog[]     @relation("searchLog")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  recipes       RecipeUser[]
+  sessions      Session[]
+}
 
-  username  String
-  birthdate DateTime
-  phone     String?
-  country   String
-
-  sessions  Session[]
-
+model SearchHistory {
+  id        String   @id @default(cuid())
+  query     String   // This will store the ENCRYPTED query
+  queryHash String   // This will store the HASH for finding duplicates
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  recipes   RecipeUser[]
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, queryHash])
+}
+
+model SearchLog {
+  id        String   @id @default(cuid())
+  query     String
+  queryHash String
+  createdAt DateTime @default(now())
+  userId    Int
+  user      User     @relation(name: "searchLog", fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Session {
@@ -48,7 +73,6 @@ model Session {
   token     String   @unique
   expiresAt DateTime
   userId    Int
-
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
