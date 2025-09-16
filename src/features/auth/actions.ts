@@ -3,14 +3,14 @@
 import { z } from "zod";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import { createSession } from "@/lib/session";
-import comparePassword from "@/utils/comparePassword";
-import generateSalt from "@/utils/saltHelper";
-import hashPassword from "@/utils/hashPassword";
+import { createSession } from "@/lib/session"; // Creates user session
+import comparePassword from "@/utils/comparePassword"; // Compares plaintext vs hashed password
+import generateSalt from "@/utils/saltHelper"; // Generates random salt
+import hashPassword from "@/utils/hashPassword"; // Hashes password with salt
 import type { LoginFormState, RegisterFormState } from "./types";
 
 /**
- * Schema for validating login form fields
+ * Schema for login form fields
  */
 const loginSchema = z.object({
   email: z.email({ message: "Invalid email address." }),
@@ -19,21 +19,22 @@ const loginSchema = z.object({
 
 /**
  * Login server action
- * Validates form data
- * Finds user in DB
- * Verifies password with stored salt + hash
- * Creates a session if valid
- * Redirects to `/`
+ * - Validates login form data
+ * - Finds user in database
+ * - Verifies password using salt + hash
+ * - Creates session if credentials are correct
+ * - Redirects to home page on success
  */
 export async function loginAction(
   prevState: LoginFormState,
   formData: FormData
 ): Promise<LoginFormState> {
-  // Validate fields
+  // Parse form fields
   const validatedFields = loginSchema.safeParse(
     Object.fromEntries(formData.entries())
   );
 
+  // Return errors if validation failed
   if (!validatedFields.success) {
     return {
       message: "Invalid form data.",
@@ -44,6 +45,7 @@ export async function loginAction(
   const { email, password: suppliedPassword } = validatedFields.data;
 
   try {
+    // Find user by email
     const user = await prisma.user.findUnique({ where: { email } });
 
     if (!user) {
@@ -61,14 +63,14 @@ export async function loginAction(
       return { message: "Invalid email or password." };
     }
 
-    // Create a session on successful login
+    // Create session after successful login
     await createSession(user.id);
   } catch (error) {
     console.error(error);
     return { message: "An unexpected error occurred." };
   }
 
-  // Redirect to home on successful login
+  // Redirect user to home page
   redirect("/");
 }
 
@@ -86,20 +88,22 @@ const registerSchema = z.object({
 
 /**
  * Register server action
- * Validates input with Zod
- * Checks for duplicate email
- * Hashes + salts password
- * Creates user in DB
- * Redirects to login page
+ * - Validates form input with Zod
+ * - Checks for duplicate email
+ * - Hashes and salts password
+ * - Creates new user in database
+ * - Redirects to login page on success
  */
 export async function registerAction(
   prevState: RegisterFormState,
   formData: FormData
 ): Promise<RegisterFormState> {
+  // Parse and validate form fields
   const validatedFields = registerSchema.safeParse(
     Object.fromEntries(formData.entries())
   );
 
+  // Return validation errors if present
   if (!validatedFields.success) {
     return {
       message: "Please correct the errors below.",
@@ -110,7 +114,7 @@ export async function registerAction(
   const { email, password, ...rest } = validatedFields.data;
 
   try {
-    // Check if email already exists
+    // Prevent duplicate accounts
     const existingUser = await prisma.user.findUnique({ where: { email } });
     if (existingUser) {
       return {
@@ -119,11 +123,11 @@ export async function registerAction(
       };
     }
 
-    // Generate salt + hashed password
+    // Generate salt and hash password
     const salt = generateSalt();
     const hashedPassword = await hashPassword(password, salt);
 
-    // Save user in DB
+    // Create new user in database
     await prisma.user.create({
       data: {
         email,
@@ -137,6 +141,6 @@ export async function registerAction(
     return { message: "An unexpected server error occurred." };
   }
 
-  // Redirect to login after successful registration
+  // Redirect to login page after registration
   redirect("/login");
 }

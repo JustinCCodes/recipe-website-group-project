@@ -66,7 +66,7 @@ export default function SearchBar({ onQueryChange }: SearchBarProps) {
 
   return (
     <div className="relative w-full">
-      {/* Search form (submits query on Enter key press) */}
+      {/* Search form submits query on enter key press */}
       <form
         onSubmit={handleSearch}
         action="/search"

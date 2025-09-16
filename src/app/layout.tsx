@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/features/layout/components/Navbar";
+import Navbar from "@/features/layout/components/Navbar"; // Persistent bottom navigation
 
 /**
  * Global head metadata
@@ -12,19 +12,19 @@ export const metadata: Metadata = {
 
 /**
  * RootLayout
- * Wraps the entire app in consistent HTML structure
- * Applies global styles (fonts, background, colors)
- * Renders Navbar at the bottom of every page
+ * Wraps everything in consistent HTML structure
+ * Applies global styles
+ * Renders Navbar at bottom of every page
  */
 export default function RootLayout({
-  children,
+  children, // Page content
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body>
-        {/* Page content goes here */}
+        {/* Page content */}
         <main>{children}</main>
 
         {/* Persistent bottom navigation */}
