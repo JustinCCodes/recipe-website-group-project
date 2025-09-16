@@ -2,8 +2,8 @@ import Link from "next/link";
 
 /**
  * FloatingSearchButton
- * Renders a floating circular button that links to `/search` page
- * Positioned top right with fixed so it stays visible.
+ * Renders a floating circular button that links to /search page
+ * Positioned top right with fixed so it stays visible
  * Contains a search icon magnifying glass
  */
 export default function FloatingSearchButton() {

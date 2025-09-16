@@ -14,7 +14,7 @@ export default function SearchLogManager({
 }: {
   initialHistory: UnifiedHistoryItem[];
 }) {
-  // Reference to the date-range (<dialog>)
+  // Reference to the date-range
   const modalRef = useRef<HTMLDialogElement>(null);
   // Controlled inputs for date-range deletion
   const [startDate, setStartDate] = useState("");

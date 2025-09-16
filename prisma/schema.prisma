@@ -18,7 +18,7 @@ model Recipe {
   mediaType    String   @default("video")
 
   durationSec  Int?
-  likes        Int?
+  likes        Like[]
 
   prepTime     Int
   cookTime     Int
@@ -29,6 +29,10 @@ model Recipe {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
   users        RecipeUser[]
+
+  isPublic     Boolean  @default(false)
+  author       User?     @relation(fields: [authorId], references: [id])
+  authorId     Int?
 }
 
 model User {
@@ -46,6 +50,18 @@ model User {
   updatedAt     DateTime @updatedAt
   recipes       RecipeUser[]
   sessions      Session[]
+  likes         Like[]
+  authoredRecipes Recipe[]
+}
+
+model Like {
+  recipe   Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  recipeId Int
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId   Int
+
+  // A user can only like a recipe once
+  @@id([recipeId, userId])
 }
 
 model SearchHistory {

@@ -1,9 +1,9 @@
 "use client";
 
-import { useActionState } from "react";
-import { registerAction } from "../actions";
-import { SubmitButton } from "./SubmitButton";
-import type { RegisterFormState } from "../types";
+import { useActionState } from "react"; // Hook to manage server actions
+import { registerAction } from "../actions"; // Server action for registration
+import { SubmitButton } from "./SubmitButton"; // Reusable submit button with loading state
+import type { RegisterFormState } from "../types"; // Type for form state
 
 /**
  * RegisterForm
@@ -12,8 +12,8 @@ import type { RegisterFormState } from "../types";
  * Provides inputs for all registration fields
  */
 export default function RegisterForm() {
-  const initialState: RegisterFormState = {};
-  const [state, formAction] = useActionState(registerAction, initialState);
+  const initialState: RegisterFormState = {}; // Initial empty state
+  const [state, formAction] = useActionState(registerAction, initialState); // Hook for form submission and state
 
   return (
     <div className="flex items-center justify-center min-h-screen p-4 bg-base-200">
@@ -24,12 +24,12 @@ export default function RegisterForm() {
       >
         <h2 className="text-2xl font-bold text-center">Create an Account!</h2>
 
-        {/* Display general non input specific errors */}
+        {/* Display general error message */}
         {state?.message && !state.errors && (
           <div className="alert alert-error">{state.message}</div>
         )}
 
-        {/* Username */}
+        {/* Username input */}
         <div className="form-control">
           <label className="label">
             <span className="label-text">Username</span>
@@ -42,6 +42,7 @@ export default function RegisterForm() {
               state.errors?.username ? "input-error" : ""
             }`}
           />
+          {/* Username error */}
           {state.errors?.username && (
             <span className="text-error text-xs mt-1">
               {state.errors.username[0]}
@@ -49,7 +50,7 @@ export default function RegisterForm() {
           )}
         </div>
 
-        {/* Email */}
+        {/* Email input */}
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -62,6 +63,7 @@ export default function RegisterForm() {
               state.errors?.email ? "input-error" : ""
             }`}
           />
+          {/* Email error */}
           {state.errors?.email && (
             <span className="text-error text-xs mt-1">
               {state.errors.email[0]}
@@ -69,7 +71,7 @@ export default function RegisterForm() {
           )}
         </div>
 
-        {/* Password */}
+        {/* Password input */}
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
@@ -83,6 +85,7 @@ export default function RegisterForm() {
             }`}
             autoComplete="new-password"
           />
+          {/* Password error */}
           {state.errors?.password && (
             <span className="text-error text-xs mt-1">
               {state.errors.password[0]}
@@ -90,7 +93,7 @@ export default function RegisterForm() {
           )}
         </div>
 
-        {/* Birthdate */}
+        {/* Birthdate input */}
         <div className="form-control">
           <label className="label">
             <span className="label-text">Birthdate</span>
@@ -103,6 +106,7 @@ export default function RegisterForm() {
               state.errors?.birthdate ? "input-error" : ""
             }`}
           />
+          {/* Birthdate error */}
           {state.errors?.birthdate && (
             <span className="text-error text-xs mt-1">
               {state.errors.birthdate[0]}
@@ -110,7 +114,7 @@ export default function RegisterForm() {
           )}
         </div>
 
-        {/* Phone */}
+        {/* Phone input optional */}
         <div className="form-control">
           <label className="label">
             <span className="label-text">Phone (Optional)</span>
@@ -122,6 +126,7 @@ export default function RegisterForm() {
               state.errors?.phone ? "input-error" : ""
             }`}
           />
+          {/* Phone error */}
           {state.errors?.phone && (
             <span className="text-error text-xs mt-1">
               {state.errors.phone[0]}
@@ -129,7 +134,7 @@ export default function RegisterForm() {
           )}
         </div>
 
-        {/* Country */}
+        {/* Country select */}
         <div className="form-control">
           <label className="label">
             <span className="label-text">Country</span>
@@ -152,6 +157,7 @@ export default function RegisterForm() {
             <option value="fr">France</option>
             <option value="nl">Netherlands</option>
           </select>
+          {/* Country error */}
           {state.errors?.country && (
             <span className="text-error text-xs mt-1">
               {state.errors.country[0]}
@@ -159,6 +165,7 @@ export default function RegisterForm() {
           )}
         </div>
 
+        {/* Submit button */}
         <SubmitButton label="Sign Up" loadingLabel="Signing Up..." />
 
         {/* Link to login page */}

@@ -5,7 +5,6 @@
     "mediaUrl": "./videos/classic_tomato_soup.mp4",
     "mediaType": "video",
     "durationSec": 25,
-    "likes": 1200,
     "prepTime": 10,
     "cookTime": 20,
     "servings": 4,
@@ -19,7 +18,7 @@
       "Basil"
     ],
     "instructions": [
-      "Saut\u00e9 onion and garlic.",
+      "Sauté onion and garlic.",
       "Add tomatoes and broth, simmer for 15 minutes.",
       "Blend until smooth.",
       "Stir in cream and basil before serving."
@@ -31,7 +30,6 @@
     "mediaUrl": "./videos/lemon_herb_chicken.mp4",
     "mediaType": "video",
     "durationSec": 30,
-    "likes": 2500,
     "prepTime": 15,
     "cookTime": 25,
     "servings": 2,
@@ -48,7 +46,7 @@
     "instructions": [
       "Marinate chicken with lemon juice, herbs, and olive oil.",
       "Sear in a hot pan until golden brown.",
-      "Finish baking in the oven at 200\u00b0C for 15-20 minutes."
+      "Finish baking in the oven at 200°C for 15-20 minutes."
     ]
   },
   {
@@ -57,7 +55,6 @@
     "mediaUrl": "./videos/garlic_noodles.mp4",
     "mediaType": "video",
     "durationSec": 20,
-    "likes": 3100,
     "prepTime": 5,
     "cookTime": 15,
     "servings": 2,
@@ -72,7 +69,7 @@
     ],
     "instructions": [
       "Cook spaghetti according to package directions.",
-      "In a pan, melt butter and saut\u00e9 minced garlic until fragrant.",
+      "In a pan, melt butter and sauté minced garlic until fragrant.",
       "Add cooked spaghetti, soy sauce, and Parmesan cheese, tossing to combine.",
       "Garnish with parsley."
     ]
@@ -83,7 +80,6 @@
     "mediaUrl": "./videos/avocado_toast.mp4",
     "mediaType": "video",
     "durationSec": 15,
-    "likes": 4200,
     "prepTime": 5,
     "cookTime": 5,
     "servings": 1,
@@ -109,7 +105,6 @@
     "mediaUrl": "./videos/chocolate_chip_cookies.mp4",
     "mediaType": "video",
     "durationSec": 28,
-    "likes": 5600,
     "prepTime": 15,
     "cookTime": 12,
     "servings": 24,
@@ -130,7 +125,7 @@
       "In a separate bowl, combine dry ingredients.",
       "Gradually add dry ingredients to the wet ingredients.",
       "Stir in chocolate chips.",
-      "Bake at 190\u00b0C for 10-12 minutes."
+      "Bake at 190°C for 10-12 minutes."
     ]
   },
   {
@@ -139,7 +134,6 @@
     "mediaUrl": "./videos/caprese_salad.mp4",
     "mediaType": "video",
     "durationSec": 18,
-    "likes": 1800,
     "prepTime": 10,
     "cookTime": 0,
     "servings": 2,
@@ -164,7 +158,6 @@
     "mediaUrl": "./videos/one_pan_lemon_pasta.mp4",
     "mediaType": "video",
     "durationSec": 22,
-    "likes": 2900,
     "prepTime": 5,
     "cookTime": 20,
     "servings": 3,
@@ -189,7 +182,6 @@
     "mediaUrl": "./videos/smoothie_bowl.mp4",
     "mediaType": "video",
     "durationSec": 15,
-    "likes": 3800,
     "prepTime": 5,
     "cookTime": 0,
     "servings": 1,
@@ -213,7 +205,6 @@
     "mediaUrl": "./videos/quesadilla.mp4",
     "mediaType": "video",
     "durationSec": 12,
-    "likes": 2200,
     "prepTime": 5,
     "cookTime": 5,
     "servings": 1,
@@ -235,7 +226,6 @@
     "mediaUrl": "./videos/carbonara.mp4",
     "mediaType": "video",
     "durationSec": 35,
-    "likes": 6100,
     "prepTime": 10,
     "cookTime": 15,
     "servings": 2,
@@ -262,7 +252,6 @@
     "mediaUrl": "./videos/banana_bread.mp4",
     "mediaType": "video",
     "durationSec": 40,
-    "likes": 4500,
     "prepTime": 10,
     "cookTime": 60,
     "servings": 8,
@@ -279,7 +268,7 @@
       "Mash bananas.",
       "Mix in melted butter, sugar, and egg.",
       "Whisk in flour and baking soda.",
-      "Pour into a loaf pan and bake at 175\u00b0C for about an hour."
+      "Pour into a loaf pan and bake at 175°C for about an hour."
     ]
   },
   {
@@ -288,7 +277,6 @@
     "mediaUrl": "./videos/greek_salad.mp4",
     "mediaType": "video",
     "durationSec": 20,
-    "likes": 1500,
     "prepTime": 15,
     "cookTime": 0,
     "servings": 4,
@@ -314,14 +302,13 @@
     "mediaUrl": "./videos/pesto_pasta.mp4",
     "mediaType": "video",
     "durationSec": 18,
-    "likes": 3300,
     "prepTime": 5,
     "cookTime": 15,
     "servings": 2,
     "category": "Dinner",
     "ingredients": [
       "Pasta",
-      "Basil Pesto",
+      "Basil P pesto",
       "Cherry Tomatoes",
       "Parmesan Cheese"
     ],
@@ -338,7 +325,6 @@
     "mediaUrl": "./videos/french_toast.mp4",
     "mediaType": "video",
     "durationSec": 25,
-    "likes": 3900,
     "prepTime": 5,
     "cookTime": 10,
     "servings": 2,
@@ -364,7 +350,6 @@
     "mediaUrl": "./videos/chicken_alfredo.mp4",
     "mediaType": "video",
     "durationSec": 38,
-    "likes": 5200,
     "prepTime": 10,
     "cookTime": 20,
     "servings": 4,
@@ -391,7 +376,6 @@
     "mediaUrl": "./videos/energy_balls.mp4",
     "mediaType": "video",
     "durationSec": 15,
-    "likes": 2800,
     "prepTime": 10,
     "cookTime": 0,
     "servings": 12,
@@ -416,7 +400,6 @@
     "mediaUrl": "./videos/beef_tacos.mp4",
     "mediaType": "video",
     "durationSec": 30,
-    "likes": 4100,
     "prepTime": 10,
     "cookTime": 15,
     "servings": 4,
@@ -443,7 +426,6 @@
     "mediaUrl": "./videos/pancakes.mp4",
     "mediaType": "video",
     "durationSec": 20,
-    "likes": 3500,
     "prepTime": 5,
     "cookTime": 15,
     "servings": 4,
@@ -462,7 +444,6 @@
     "mediaUrl": "./videos/bean_burger.mp4",
     "mediaType": "video",
     "durationSec": 32,
-    "likes": 2300,
     "prepTime": 15,
     "cookTime": 10,
     "servings": 4,
@@ -489,7 +470,6 @@
     "mediaUrl": "./videos/mango_sticky_rice.mp4",
     "mediaType": "video",
     "durationSec": 28,
-    "likes": 4800,
     "prepTime": 10,
     "cookTime": 25,
     "servings": 2,
@@ -514,7 +494,6 @@
     "mediaUrl": "./videos/cottage_cheese_toast.mp4",
     "mediaType": "video",
     "durationSec": 15,
-    "likes": 3200,
     "prepTime": 3,
     "cookTime": 2,
     "servings": 1,
@@ -532,7 +511,6 @@
     "mediaUrl": "./videos/shrimp_scampi.mp4",
     "mediaType": "video",
     "durationSec": 25,
-    "likes": 4700,
     "prepTime": 10,
     "cookTime": 15,
     "servings": 2,
@@ -560,7 +538,6 @@
     "mediaUrl": "./videos/baked_feta_soup.mp4",
     "mediaType": "video",
     "durationSec": 30,
-    "likes": 3400,
     "prepTime": 5,
     "cookTime": 30,
     "servings": 4,
@@ -575,7 +552,7 @@
     ],
     "instructions": [
       "In a baking dish, place the block of feta in the center, surrounded by tomatoes, onion, and garlic.",
-      "Drizzle with olive oil and bake at 200\u00b0C for 25 minutes.",
+      "Drizzle with olive oil and bake at 200°C for 25 minutes.",
       "Transfer the baked ingredients to a pot, add vegetable broth, and blend until smooth."
     ]
   },
@@ -585,7 +562,6 @@
     "mediaUrl": "./videos/mug_brownie.mp4",
     "mediaType": "video",
     "durationSec": 10,
-    "likes": 5900,
     "prepTime": 5,
     "cookTime": 2,
     "servings": 1,
@@ -611,7 +587,6 @@
     "mediaUrl": "./videos/egg_fried_rice.mp4",
     "mediaType": "video",
     "durationSec": 28,
-    "likes": 4300,
     "prepTime": 5,
     "cookTime": 10,
     "servings": 2,
@@ -638,7 +613,6 @@
     "mediaUrl": "./videos/feta_pasta.mp4",
     "mediaType": "video",
     "durationSec": 15,
-    "likes": 15200,
     "prepTime": 5,
     "cookTime": 30,
     "servings": 4,
@@ -655,7 +629,7 @@
     "instructions": [
       "Place feta in the center of a baking dish, surround with tomatoes and garlic.",
       "Drizzle generously with olive oil and season.",
-      "Bake at 200\u00b0C for 30 minutes until tomatoes burst and feta is soft.",
+      "Bake at 200°C for 30 minutes until tomatoes burst and feta is soft.",
       "Meanwhile, cook pasta.",
       "Mash the feta and tomatoes to create a sauce, toss with pasta and fresh basil."
     ]
@@ -666,7 +640,6 @@
     "mediaUrl": "./videos/cloud_bread.mp4",
     "mediaType": "video",
     "durationSec": 20,
-    "likes": 9800,
     "prepTime": 10,
     "cookTime": 25,
     "servings": 2,
@@ -682,7 +655,7 @@
       "Gradually add sugar and cornstarch, continuing to whip until stiff, glossy peaks form.",
       "If using, fold in food coloring.",
       "Scoop the meringue into a dome shape on a baking sheet.",
-      "Bake at 150\u00b0C for 25 minutes."
+      "Bake at 150°C for 25 minutes."
     ]
   },
   {
@@ -691,7 +664,6 @@
     "mediaUrl": "./videos/dalgona_coffee.mp4",
     "mediaType": "video",
     "durationSec": 18,
-    "likes": 12500,
     "prepTime": 5,
     "cookTime": 0,
     "servings": 1,
@@ -710,7 +682,6 @@
     "mediaUrl": "./videos/pancake_cereal.mp4",
     "mediaType": "video",
     "durationSec": 22,
-    "likes": 18300,
     "prepTime": 10,
     "cookTime": 15,
     "servings": 2,
@@ -735,7 +706,6 @@
     "mediaUrl": "./videos/gigi_hadid_pasta.mp4",
     "mediaType": "video",
     "durationSec": 28,
-    "likes": 22000,
     "prepTime": 10,
     "cookTime": 20,
     "servings": 3,
@@ -754,7 +724,7 @@
     ],
     "instructions": [
       "Cook pasta.",
-      "In a large saucepan, saut\u00e9 onion and garlic in olive oil.",
+      "In a large saucepan, sauté onion and garlic in olive oil.",
       "Add tomato paste and cook until darkened.",
       "Stir in vodka and cook it off, then add heavy cream and red pepper flakes.",
       "Simmer until the sauce thickens.",

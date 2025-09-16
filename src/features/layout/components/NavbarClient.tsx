@@ -5,11 +5,18 @@ import { NavbarButton } from "./NavbarButton";
 
 type Session = { user: { username: string | null } } | null;
 
+/**
+ * NavbarClient
+ * - Fixed bottom navigation bar
+ * - Shows different options for logged in vs guest users
+ * - Uses NavbarButton for consistent button styling
+ * - Displays avatar when logged in
+ */
 export default function NavbarClient({ session }: { session: Session }) {
   return (
     <nav className="fixed bottom-0 left-0 right-0 h-16 bg-base-100 border-t border-base-300 flex items-center justify-around z-50">
-      {/* Logged in User View */}
       {session ? (
+        /* Logged in View */
         <>
           {/* Home Button */}
           <NavbarButton href="/" label="Home">
@@ -29,8 +36,8 @@ export default function NavbarClient({ session }: { session: Session }) {
             </svg>
           </NavbarButton>
 
-          {/* Discover Button */}
-          <NavbarButton href="/discover" label="Discover">
+          {/* Community Button */}
+          <NavbarButton href="/community" label="Community">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -65,7 +72,7 @@ export default function NavbarClient({ session }: { session: Session }) {
             </svg>
           </NavbarButton>
 
-          {/* Inbox Button */}
+          {/* Notifications Button */}
           <NavbarButton href="/notifications" label="Inbox">
             <div className="indicator">
               <svg
@@ -87,7 +94,7 @@ export default function NavbarClient({ session }: { session: Session }) {
           </NavbarButton>
 
           {/* Profile Button */}
-          <NavbarButton href="/profile" label="Me">
+          <NavbarButton href="/dashboard" label="Me">
             <div className="avatar">
               <div className="w-7 rounded-full">
                 <UserAvatar name={session.user.username} size="sm" />
@@ -116,8 +123,8 @@ export default function NavbarClient({ session }: { session: Session }) {
             </svg>
           </NavbarButton>
 
-          {/* Discover Button */}
-          <NavbarButton href="/discover" label="Discover">
+          {/* Community Button */}
+          <NavbarButton href="/community" label="Community">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"

@@ -35,7 +35,7 @@ export async function deleteUnifiedHistoryItemAction(item: UnifiedHistoryItem) {
 }
 
 /**
- * Deletes all search history and logs for current user.
+ * Deletes all search history and logs for current user
  */
 export async function clearAllHistoryAction() {
   const session = await getSession();

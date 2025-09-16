@@ -68,7 +68,7 @@ export async function searchRecipes(
 }
 
 /**
- * Fetches user's recent unique search history
+ * Fetches users recent unique search history
  */
 export async function getSearchHistory(): Promise<string[]> {
   const session = await getSession();

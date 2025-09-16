@@ -15,7 +15,7 @@ async function main() {
         category: recipe.category,
         mediaUrl: recipe.mediaUrl,
         mediaType: recipe.mediaType,
-
+        durationSec: recipe.durationSec,
         ingredients: recipe.ingredients,
         instructions: recipe.instructions,
       },
