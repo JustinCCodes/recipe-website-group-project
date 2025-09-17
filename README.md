@@ -73,6 +73,6 @@ http://localhost:3000
 
 ## 👥 Contributors
 
-•⁠  ⁠[JustinCCodes](https://github.com/JustinCCodes)  
-•⁠  ⁠[LaraKerstian](https://github.com/laerra)  
-•⁠  ⁠[YourNameHere](https://github.com/codealchemyy)  
+•⁠  ⁠[Justin](https://github.com/JustinCCodes)  
+•⁠  ⁠[Lara](https://github.com/laerra)  
+•⁠  ⁠[Büsra](https://github.com/codealchemyy)  
