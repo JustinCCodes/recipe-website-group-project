@@ -1,0 +1,176 @@
+.
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── prisma
+│   ├── migrations
+│   │   ├── 20250904085243_create_recipe_model
+│   │   │   └── migration.sql
+│   │   ├── 20250910154946_add_user_salt
+│   │   │   └── migration.sql
+│   │   ├── 20250911081956_add_user_details
+│   │   │   └── migration.sql
+│   │   ├── 20250911085721_add_sessions_table
+│   │   │   └── migration.sql
+│   │   ├── 20250912110036_add_search_history
+│   │   │   └── migration.sql
+│   │   ├── 20250913130023_add_search_log_table
+│   │   │   └── migration.sql
+│   │   ├── 20250913132922_add_query_hash
+│   │   │   └── migration.sql
+│   │   ├── 20250914155431_add_recipe_media_fields
+│   │   │   └── migration.sql
+│   │   ├── 20250915182756_add_like_model
+│   │   │   └── migration.sql
+│   │   ├── 20250915195649_add_recipe_ownership
+│   │   │   └── migration.sql
+│   │   ├── 20250916125008_add_ingredient_and_step_models
+│   │   │   └── migration.sql
+│   │   ├── 20250917080343_add_user_pfp
+│   │   │   └── migration.sql
+│   │   ├── 20250917084226_make_step_media_optional
+│   │   │   └── migration.sql
+│   │   ├── 20250917085059_add_category_model
+│   │   │   └── migration.sql
+│   │   └── migration_lock.toml
+│   ├── recipes.json
+│   ├── schema.prisma
+│   └── seed.ts
+├── project_structure.txt
+├── public
+│   ├── icons
+│   │   └── like.png
+│   └── videos
+├── README.md
+├── src
+│   ├── app
+│   │   ├── (content)
+│   │   │   ├── about
+│   │   │   │   └── page.tsx
+│   │   │   ├── create-recipe
+│   │   │   │   └── page.tsx
+│   │   │   ├── dashboard
+│   │   │   │   └── page.tsx
+│   │   │   ├── edit-recipe
+│   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx
+│   │   │   ├── login
+│   │   │   │   └── page.tsx
+│   │   │   ├── profile
+│   │   │   │   └── page.tsx
+│   │   │   ├── recipes
+│   │   │   │   └── [id]
+│   │   │   │       └── page.tsx
+│   │   │   ├── register
+│   │   │   │   └── page.tsx
+│   │   │   ├── search
+│   │   │   │   └── page.tsx
+│   │   │   └── settings
+│   │   │       ├── account
+│   │   │       │   └── page.tsx
+│   │   │       ├── page.tsx
+│   │   │       └── privacy
+│   │   │           ├── page.tsx
+│   │   │           └── search-history
+│   │   │               └── page.tsx
+│   │   ├── (feed)
+│   │   │   ├── community
+│   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── actions.ts
+│   │   ├── error.tsx
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── not-found.tsx
+│   │   └── ui
+│   │       ├── SearchButton.tsx
+│   │       └── UserAvatar.tsx
+│   ├── features
+│   │   ├── auth
+│   │   │   ├── actions.ts
+│   │   │   ├── components
+│   │   │   │   ├── LoginForm.tsx
+│   │   │   │   ├── RegisterForm.tsx
+│   │   │   │   └── SubmitButton.tsx
+│   │   │   └── types.ts
+│   │   ├── feed
+│   │   │   ├── Feed.tsx
+│   │   │   └── FeedItem.tsx
+│   │   ├── layout
+│   │   │   └── components
+│   │   │       ├── Navbar.tsx
+│   │   │       ├── NavbarButton.tsx
+│   │   │       └── NavbarClient.tsx
+│   │   ├── profile
+│   │   │   ├── actions.ts
+│   │   │   └── components
+│   │   │       └── ProfilePictureUpload.tsx
+│   │   ├── recipes
+│   │   │   ├── actions.ts
+│   │   │   ├── components
+│   │   │   │   ├── DeleteRecipeButton.tsx
+│   │   │   │   ├── LikeButton.tsx
+│   │   │   │   ├── RecipeBook.tsx
+│   │   │   │   ├── RecipeForm.tsx
+│   │   │   │   ├── RecipeStandardView.tsx
+│   │   │   │   └── SaveButton.tsx
+│   │   │   ├── data.ts
+│   │   │   └── types.ts
+│   │   ├── search
+│   │   │   ├── actions.ts
+│   │   │   ├── components
+│   │   │   │   ├── SearchBar.tsx
+│   │   │   │   ├── SearchClient.tsx
+│   │   │   │   └── SearchPageSkeleton.tsx
+│   │   │   ├── data.ts
+│   │   │   └── types.ts
+│   │   └── settings
+│   │       ├── actions.ts
+│   │       └── components
+│   │           └── SearchLogManager.tsx
+│   ├── generated
+│   │   └── prisma
+│   │       ├── client.d.ts
+│   │       ├── client.js
+│   │       ├── default.d.ts
+│   │       ├── default.js
+│   │       ├── edge.d.ts
+│   │       ├── edge.js
+│   │       ├── index-browser.js
+│   │       ├── index.d.ts
+│   │       ├── index.js
+│   │       ├── libquery_engine-darwin-arm64.dylib.node
+│   │       ├── package.json
+│   │       ├── runtime
+│   │       │   ├── edge-esm.js
+│   │       │   ├── edge.js
+│   │       │   ├── index-browser.d.ts
+│   │       │   ├── index-browser.js
+│   │       │   ├── library.d.ts
+│   │       │   ├── library.js
+│   │       │   ├── react-native.js
+│   │       │   ├── wasm-compiler-edge.js
+│   │       │   └── wasm-engine-edge.js
+│   │       ├── schema.prisma
+│   │       ├── wasm.d.ts
+│   │       └── wasm.js
+│   ├── hooks
+│   │   └── useDragConstraints.ts
+│   ├── lib
+│   │   ├── data.ts
+│   │   ├── encryption.ts
+│   │   ├── prisma.ts
+│   │   └── session.ts
+│   ├── types
+│   │   └── recipe.ts
+│   └── utils
+│       ├── comparePassword.ts
+│       ├── hashPassword.ts
+│       └── saltHelper.ts
+└── tsconfig.json
+
+61 directories, 113 files

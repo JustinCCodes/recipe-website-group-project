@@ -65,8 +65,7 @@ export async function addSearchTermAction(term: string) {
 }
 
 /**
- * Fetches search suggestions based on history and recipe names.
- * Replaces /api/recipes/suggestions
+ * Fetches search suggestions based on history and recipe names
  */
 export async function getSearchSuggestions(
   query: string

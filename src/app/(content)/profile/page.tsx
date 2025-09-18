@@ -23,7 +23,11 @@ export default async function ProfilePage() {
         {/* User avatar */}
         <div className="avatar">
           <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <UserAvatar name={user.username} size="lg" />
+            <UserAvatar
+              name={user.username}
+              profileImageUrl={user.profileImageUrl}
+              size="lg"
+            />
           </div>
         </div>
 

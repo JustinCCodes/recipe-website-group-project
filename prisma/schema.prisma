@@ -10,48 +10,80 @@ datasource db {
 }
 
 model Recipe {
-  id           Int      @id @default(autoincrement())
-  name         String   @unique
-  description  String
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  description String
 
-  mediaUrl     String   @default("https://via.placeholder.com/400.mp4")
-  mediaType    String   @default("video")
+  mediaUrl    String   @default("https://via.placeholder.com/400.mp4")
+  mediaType   String   @default("video")
+  durationSec Int?
 
-  durationSec  Int?
-  likes        Like[]
+  prepTime Int
+  cookTime Int
+  servings Int
 
-  prepTime     Int
-  cookTime     Int
-  servings     Int
-  category     String
-  ingredients  String[]
-  instructions String[]
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-  users        RecipeUser[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  isPublic     Boolean  @default(false)
-  author       User?     @relation(fields: [authorId], references: [id])
-  authorId     Int?
+  isPublic Boolean @default(false)
+  author   User?   @relation(fields: [authorId], references: [id])
+  authorId Int?
+
+  ingredients      Ingredient[]
+  instructionSteps InstructionStep[]
+
+  users RecipeUser[]
+  likes Like[]
+
+  category   Category? @relation(fields: [categoryId], references: [id])
+  categoryId Int?
+}
+
+model Ingredient {
+  id       Int     @id @default(autoincrement())
+  name     String
+  amount   String
+  imageUrl String?
+  Recipe   Recipe? @relation(fields: [recipeId], references: [id])
+  recipeId Int?
+}
+
+model InstructionStep {
+  id         Int    @id @default(autoincrement())
+  stepNumber Int
+  text       String
+  mediaUrl   String?
+  mediaType  String?
+  Recipe     Recipe? @relation(fields: [recipeId], references: [id])
+  recipeId   Int?
+
+  @@unique([recipeId, stepNumber])
+}
+
+model Category {
+  id      Int      @id @default(autoincrement())
+  name    String   @unique
+  recipes Recipe[]
 }
 
 model User {
-  id            Int      @id @default(autoincrement())
-  email         String   @unique
-  password      String
-  salt          String
-  username      String
-  birthdate     DateTime
-  phone         String?
-  country       String
-  searchHistory SearchHistory[]
-  searchLog     SearchLog[]     @relation("searchLog")
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-  recipes       RecipeUser[]
-  sessions      Session[]
-  likes         Like[]
+  id              Int      @id @default(autoincrement())
+  email           String   @unique
+  password        String
+  salt            String
+  username        String
+  birthdate       DateTime
+  phone           String?
+  country         String
+  searchHistory   SearchHistory[]
+  searchLog       SearchLog[]     @relation("searchLog")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  recipes         RecipeUser[]
+  sessions        Session[]
+  likes           Like[]
   authoredRecipes Recipe[]
+  profileImageUrl String?
 }
 
 model Like {
@@ -60,14 +92,13 @@ model Like {
   user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId   Int
 
-  // A user can only like a recipe once
   @@id([recipeId, userId])
 }
 
 model SearchHistory {
   id        String   @id @default(cuid())
-  query     String   // This will store the ENCRYPTED query
-  queryHash String   // This will store the HASH for finding duplicates
+  query     String
+  queryHash String
   createdAt DateTime @default(now())
   userId    Int
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)

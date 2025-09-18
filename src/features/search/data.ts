@@ -55,7 +55,13 @@ export async function searchRecipes(
         OR: [
           { name: { contains: query, mode: "insensitive" } },
           { description: { contains: query, mode: "insensitive" } },
-          { ingredients: { has: query.toLowerCase() } },
+          {
+            ingredients: {
+              some: {
+                name: { contains: query, mode: "insensitive" },
+              },
+            },
+          },
         ],
       },
       select: { id: true, name: true, description: true },
@@ -68,7 +74,7 @@ export async function searchRecipes(
 }
 
 /**
- * Fetches users recent unique search history
+ * Fetches the users recent unique search history
  */
 export async function getSearchHistory(): Promise<string[]> {
   const session = await getSession();

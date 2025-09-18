@@ -1,32 +1,68 @@
-import { getRecipeById } from "@/features/recipes/data"; // Function to fetch recipe by its ID
-import RecipeForm from "@/features/recipes/components/RecipeForm"; // Form used to edit or create recipe
+import { notFound } from "next/navigation";
+import RecipeForm from "@/features/recipes/components/RecipeForm";
+import { getCategoryNames, getRecipeDetails } from "@/features/recipes/data";
+import type {
+  Recipe,
+  Ingredient,
+  InstructionStep,
+  Category,
+} from "@/generated/prisma";
 
-// Props for EditRecipePage component
-// Expects searchParams with an optional id string
+function transformRecipeForForm(
+  recipe: Recipe & {
+    ingredients: Ingredient[];
+    instructionSteps: InstructionStep[];
+    category: Category | null;
+  }
+) {
+  return {
+    ...recipe,
+    media: undefined,
+    category: recipe.category?.name || "",
+    ingredients: recipe.ingredients.map((ing) => {
+      const parts = ing.amount.match(/^([\d/.,\s]+)\s*(.*)$/);
+      return {
+        name: ing.name,
+        amount: parts ? parts[1].trim() : "",
+        unit: parts ? parts[2].trim() : "",
+      };
+    }),
+    instructionSteps: recipe.instructionSteps.map((step) => ({
+      text: step.text,
+    })),
+  };
+}
+
 interface EditRecipePageProps {
   searchParams: { id?: string };
 }
 
-// Main page component for editing recipes
 export default async function EditRecipePage({
   searchParams,
 }: EditRecipePageProps) {
-  // Convert the id from string to number
-  const id = Number(searchParams.id);
+  const params = await searchParams;
+  const id = Number(params.id);
+  if (isNaN(id)) {
+    return notFound();
+  }
 
-  // If ID is invalid or missing show a not found message
-  if (!id) return <p>Recipe not found.</p>;
+  const [categories, recipeDetails] = await Promise.all([
+    getCategoryNames(),
+    getRecipeDetails(id),
+  ]);
 
-  // Fetch recipe data from database using ID
-  const recipe = await getRecipeById(id);
+  if (!recipeDetails) {
+    return notFound();
+  }
+
+  const initialDataForForm = transformRecipeForForm(recipeDetails as any);
 
   return (
     <main className="mx-auto max-w-2xl p-6 space-y-6">
-      {/* Page title showing which recipe is being edited */}
-      <h1 className="text-2xl font-semibold">Edit Recipe #{id}</h1>
-
-      {/* RecipeForm component pre filled with the fetched recipe data */}
-      <RecipeForm initialData={recipe} />
+      <h1 className="text-2xl font-semibold">
+        Edit Recipe: {recipeDetails.name}
+      </h1>
+      <RecipeForm categories={categories} initialData={initialDataForForm} />
     </main>
   );
 }
