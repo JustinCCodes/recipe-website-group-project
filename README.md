@@ -1,36 +1,36 @@
 # 🍳 Recipe Website
 
-A collaborative project to create a modern recipe platform.
-Users can discover, view, and interact with recipes – each step supported with images, GIFs, or videos.
+A collaborative project to create a modern recipe platform.  
+Users can discover, view, and interact with recipes – each step supported with images, GIFs, or videos.  
 
-🔗 _Repository_: [recipe-website-group-project](git@github.com:JustinCCodes/recipe-website-group-project.git)
+🔗 *Repository*: [recipe-website-group-project](git@github.com:JustinCCodes/recipe-website-group-project.git)
 
 ---
 
 ## ✨ Features
 
-✅ Recipe feed with images/videos
-✅ Like ❤️ , save 🔖 & edit ✏️ recipes
-✅ Search option 🔍
-✅ Recipe detail pages with _step-by-step instructions_ (including images)
-✅ Authentication (register/login/profile) 👤
-✅ Responsive & mobile-first design 📱
+✅ Recipe feed with images/videos  
+✅ Like ❤️ , save 🔖 & edit ✏️ recipes  
+✅ Search option 🔍  
+✅ Recipe detail pages with *step-by-step instructions* (including images)  
+✅ Authentication (register/login/profile) 👤  
+✅ Responsive & mobile-first design 📱  
 
 ---
 
 ## 🛠️ Tech Stack
 
-•⁠ ⁠*Framework:* [Next.js 15](https://nextjs.org/) (App Router)
-•⁠ ⁠*Language:* [TypeScript](https://www.typescriptlang.org/)
-•⁠ ⁠*Styling:* [Tailwind CSS](https://tailwindcss.com/)
-•⁠ ⁠*Database:* [Prisma,Neon](https://www.prisma.io/ & https://neon.com/) + PostgreSQL
-•⁠ ⁠*Other:* React Hooks, Context API
+•⁠  ⁠*Framework:* [Next.js 15](https://nextjs.org/) (App Router)  
+•⁠  ⁠*Language:* [TypeScript](https://www.typescriptlang.org/)  
+•⁠  ⁠*Styling:* [Tailwind CSS](https://tailwindcss.com/)  
+•⁠  ⁠*Database:* [Prisma,Neon](https://www.prisma.io/ & https://neon.com/) + PostgreSQL  
+•⁠  ⁠*Other:* React Hooks, Context API
 
 ---
 
 ## 📂 Project Structure
 
-````plaintext
+```plaintext
 src/
  ├─ app/                     # Next.js app router pages
  │   ├─ recipes/             # Recipes
@@ -73,7 +73,6 @@ http://localhost:3000
 
 ## 👥 Contributors
 
-•⁠  ⁠[Justin](https://github.com/JustinCCodes)
-•⁠  ⁠[Lara](https://github.com/laerra)
-•⁠  ⁠[Büsra](https://github.com/codealchemyy)
-````
+•⁠  ⁠[Justin](https://github.com/JustinCCodes)  
+•⁠  ⁠[Lara](https://github.com/laerra)  
+•⁠  ⁠[Büsra](https://github.com/codealchemyy)  
