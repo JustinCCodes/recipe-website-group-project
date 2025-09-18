@@ -43,7 +43,7 @@ export default function SaveButton({
       setIsSaved(!newSavedState);
       console.error(err);
 
-      // Optional: show error toast
+      // Show error toast
       toast.error("Failed to update saved state. Please try again.");
     } finally {
       setIsPending(false);

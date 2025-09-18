@@ -104,11 +104,25 @@ export default async function DashboardPage() {
                 className="border border-base-300 bg-base-200 rounded-lg overflow-hidden"
               >
                 <Link href={`/recipes/${recipe.id}`} className="block">
-                  <img
-                    src={recipe.mediaUrl}
-                    alt={recipe.name}
-                    className="w-full h-40 object-cover"
-                  />
+                  {recipe.mediaType === "video" ||
+                  (recipe.mediaUrl &&
+                    /\.(mp4|webm)$/i.test(recipe.mediaUrl)) ? (
+                    <video
+                      src={recipe.mediaUrl}
+                      className="w-full h-40 object-cover"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                    />
+                  ) : (
+                    <img
+                      src={recipe.mediaUrl}
+                      alt={recipe.name}
+                      className="w-full h-40 object-cover"
+                    />
+                  )}
                   <div className="p-3">
                     <h3 className="font-medium truncate">{recipe.name}</h3>
                   </div>

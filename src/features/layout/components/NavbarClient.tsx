@@ -3,7 +3,7 @@
 import UserAvatar from "@/app/ui/UserAvatar";
 import { NavbarButton } from "./NavbarButton";
 
-type Session = { user: { username: string | null } } | null;
+type Session = { user: { username: string | null; profileImageUrl?: string | null } } | null;
 
 /**
  * NavbarClient
@@ -97,7 +97,7 @@ export default function NavbarClient({ session }: { session: Session }) {
           <NavbarButton href="/dashboard" label="Me">
             <div className="avatar">
               <div className="w-7 rounded-full">
-                <UserAvatar name={session.user.username} size="sm" />
+                <UserAvatar name={session.user.username} profileImageUrl={session.user.profileImageUrl} size="sm" />
               </div>
             </div>
           </NavbarButton>

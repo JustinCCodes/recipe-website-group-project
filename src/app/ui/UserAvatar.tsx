@@ -2,10 +2,11 @@ import React from "react";
 
 interface UserAvatarProps {
   name: string | null; // users display name or null
+  profileImageUrl?: string | null; // optional profile image url
   size?: "sm" | "lg"; // optional size
 }
 
-const UserAvatar: React.FC<UserAvatarProps> = ({ name, size = "lg" }) => {
+const UserAvatar: React.FC<UserAvatarProps> = ({ name, profileImageUrl, size = "lg" }) => {
   // Styles based on size
   let containerClasses = "";
   let textClasses = "";
@@ -24,7 +25,13 @@ const UserAvatar: React.FC<UserAvatarProps> = ({ name, size = "lg" }) => {
   // Takes first letter capitilize or empty string
   const initial = name ? name.charAt(0).toUpperCase() : "";
 
-  return (
+  return profileImageUrl ? (
+    <img
+      src={profileImageUrl}
+      alt={name || "User"}
+      className={`rounded-full object-cover ${containerClasses}`}
+    />
+  ) : (
     <div
       className={`flex items-center justify-center rounded-full bg-primary text-primary-content ${containerClasses}`}
     >

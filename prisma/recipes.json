@@ -2,733 +2,495 @@
   {
     "name": "Classic Tomato Soup",
     "description": "A creamy and comforting tomato soup, perfect for a rainy day.",
-    "mediaUrl": "./videos/classic_tomato_soup.mp4",
+    "mediaUrl": "/videos/classic_tomato_soup.mp4",
     "mediaType": "video",
     "durationSec": 25,
     "prepTime": 10,
     "cookTime": 20,
     "servings": 4,
-    "category": "Lunch",
+    "category_name": "Lunch",
     "ingredients": [
-      "Tomatoes",
-      "Onion",
-      "Garlic",
-      "Vegetable Broth",
-      "Cream",
-      "Basil"
+      {
+        "name": "Tomatoes",
+        "amount": "1kg",
+        "imageUrl": "/icons/tomatoes.png"
+      },
+      { "name": "Onion", "amount": "1", "imageUrl": "/icons/onion.png" }
     ],
-    "instructions": [
-      "Sauté onion and garlic.",
-      "Add tomatoes and broth, simmer for 15 minutes.",
-      "Blend until smooth.",
-      "Stir in cream and basil before serving."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Sauté onion and garlic.",
+        "mediaUrl": "/videos/soup_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Add tomatoes and broth, simmer for 15 minutes.",
+        "mediaUrl": "/videos/soup_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Simple Lemon Herb Chicken",
     "description": "Juicy and flavorful chicken breast marinated in lemon and herbs.",
-    "mediaUrl": "./videos/lemon_herb_chicken.mp4",
+    "mediaUrl": "/videos/lemon_herb_chicken.mp4",
     "mediaType": "video",
     "durationSec": 30,
     "prepTime": 15,
     "cookTime": 25,
     "servings": 2,
-    "category": "Dinner",
+    "category_name": "Dinner",
     "ingredients": [
-      "Chicken Breast",
-      "Lemon",
-      "Rosemary",
-      "Thyme",
-      "Olive Oil",
-      "Salt",
-      "Pepper"
+      {
+        "name": "Chicken Breast",
+        "amount": "2",
+        "imageUrl": "/icons/chicken.png"
+      },
+      { "name": "Lemon", "amount": "1", "imageUrl": "/icons/lemon.png" }
     ],
-    "instructions": [
-      "Marinate chicken with lemon juice, herbs, and olive oil.",
-      "Sear in a hot pan until golden brown.",
-      "Finish baking in the oven at 200°C for 15-20 minutes."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Marinate chicken with lemon juice, herbs, and olive oil.",
+        "mediaUrl": "/videos/chicken_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Sear in a hot pan until golden brown.",
+        "mediaUrl": "/videos/chicken_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Quick Garlic Noodles",
     "description": "A fast and addictive garlic noodle dish that's ready in minutes.",
-    "mediaUrl": "./videos/garlic_noodles.mp4",
+    "mediaUrl": "/videos/garlic_noodles.mp4",
     "mediaType": "video",
     "durationSec": 20,
     "prepTime": 5,
     "cookTime": 15,
     "servings": 2,
-    "category": "Dinner",
+    "category_name": "Dinner",
     "ingredients": [
-      "Spaghetti",
-      "Garlic",
-      "Butter",
-      "Parmesan Cheese",
-      "Parsley",
-      "Soy Sauce"
+      { "name": "Spaghetti", "amount": "200g", "imageUrl": "/icons/pasta.png" },
+      {
+        "name": "Garlic",
+        "amount": "4 cloves",
+        "imageUrl": "/icons/garlic.png"
+      }
     ],
-    "instructions": [
-      "Cook spaghetti according to package directions.",
-      "In a pan, melt butter and sauté minced garlic until fragrant.",
-      "Add cooked spaghetti, soy sauce, and Parmesan cheese, tossing to combine.",
-      "Garnish with parsley."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Cook spaghetti according to package directions.",
+        "mediaUrl": "/videos/noodles_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "In a pan, melt butter and sauté minced garlic until fragrant.",
+        "mediaUrl": "/videos/noodles_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Avocado Toast with Egg",
     "description": "The perfect breakfast or light lunch, featuring creamy avocado and a perfectly fried egg.",
-    "mediaUrl": "./videos/avocado_toast.mp4",
+    "mediaUrl": "/videos/avocado_toast.mp4",
     "mediaType": "video",
     "durationSec": 15,
     "prepTime": 5,
     "cookTime": 5,
     "servings": 1,
-    "category": "Breakfast",
+    "category_name": "Breakfast",
     "ingredients": [
-      "Bread",
-      "Avocado",
-      "Egg",
-      "Red Pepper Flakes",
-      "Salt",
-      "Pepper"
+      { "name": "Bread", "amount": "1 slice", "imageUrl": "/icons/bread.png" },
+      { "name": "Avocado", "amount": "1/2", "imageUrl": "/icons/avocado.png" }
     ],
-    "instructions": [
-      "Toast the bread to your liking.",
-      "Mash the avocado and spread it on the toast.",
-      "Fry an egg and place it on top.",
-      "Season with salt, pepper, and red pepper flakes."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Toast the bread to your liking.",
+        "mediaUrl": "/videos/avocado_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Mash the avocado and spread it on the toast.",
+        "mediaUrl": "/videos/avocado_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Chocolate Chip Cookies",
     "description": "Classic, chewy, and gooey chocolate chip cookies that everyone will love.",
-    "mediaUrl": "./videos/chocolate_chip_cookies.mp4",
+    "mediaUrl": "/videos/chocolate_chip_cookies.mp4",
     "mediaType": "video",
     "durationSec": 28,
     "prepTime": 15,
     "cookTime": 12,
     "servings": 24,
-    "category": "Dessert",
+    "category_name": "Dessert",
     "ingredients": [
-      "Flour",
-      "Butter",
-      "Brown Sugar",
-      "White Sugar",
-      "Eggs",
-      "Vanilla Extract",
-      "Baking Soda",
-      "Chocolate Chips"
+      {
+        "name": "Flour",
+        "amount": "2 1/4 cups",
+        "imageUrl": "/icons/flour.png"
+      },
+      {
+        "name": "Butter",
+        "amount": "1 cup, softened",
+        "imageUrl": "/icons/butter.png"
+      }
     ],
-    "instructions": [
-      "Cream together butter and sugars.",
-      "Beat in eggs and vanilla.",
-      "In a separate bowl, combine dry ingredients.",
-      "Gradually add dry ingredients to the wet ingredients.",
-      "Stir in chocolate chips.",
-      "Bake at 190°C for 10-12 minutes."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Cream together butter and sugars. Beat in eggs and vanilla.",
+        "mediaUrl": "/videos/cookies_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Combine dry ingredients and gradually add to the wet mixture.",
+        "mediaUrl": "/videos/cookies_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Caprese Salad",
     "description": "A simple and elegant Italian salad with fresh mozzarella, tomatoes, and basil.",
-    "mediaUrl": "./videos/caprese_salad.mp4",
+    "mediaUrl": "/videos/caprese_salad.mp4",
     "mediaType": "video",
     "durationSec": 18,
     "prepTime": 10,
     "cookTime": 0,
     "servings": 2,
-    "category": "Appetizer",
+    "category_name": "Appetizer",
     "ingredients": [
-      "Tomatoes",
-      "Fresh Mozzarella",
-      "Fresh Basil",
-      "Balsamic Glaze",
-      "Olive Oil"
+      {
+        "name": "Tomatoes",
+        "amount": "2 large",
+        "imageUrl": "/icons/tomatoes.png"
+      },
+      {
+        "name": "Fresh Mozzarella",
+        "amount": "225g",
+        "imageUrl": "/icons/mozzarella.png"
+      }
     ],
-    "instructions": [
-      "Slice tomatoes and mozzarella.",
-      "Arrange alternating slices on a plate.",
-      "Tuck basil leaves in between.",
-      "Drizzle with olive oil and balsamic glaze."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Slice tomatoes and mozzarella.",
+        "mediaUrl": "/videos/caprese_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Arrange alternating slices on a plate with basil leaves.",
+        "mediaUrl": "/videos/caprese_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "One-Pan Lemon Pasta",
     "description": "A bright and zesty pasta dish that cooks entirely in one pan for easy cleanup.",
-    "mediaUrl": "./videos/one_pan_lemon_pasta.mp4",
+    "mediaUrl": "/videos/one_pan_lemon_pasta.mp4",
     "mediaType": "video",
     "durationSec": 22,
     "prepTime": 5,
     "cookTime": 20,
     "servings": 3,
-    "category": "Dinner",
+    "category_name": "Dinner",
     "ingredients": [
-      "Linguine",
-      "Lemon",
-      "Garlic",
-      "Cherry Tomatoes",
-      "Spinach",
-      "Vegetable Broth"
+      { "name": "Linguine", "amount": "225g", "imageUrl": "/icons/pasta.png" },
+      { "name": "Lemon", "amount": "1", "imageUrl": "/icons/lemon.png" }
     ],
-    "instructions": [
-      "Combine all ingredients in a large pan.",
-      "Bring to a boil, then simmer, stirring occasionally.",
-      "Cook until pasta is al dente and sauce has thickened."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Combine all ingredients in a large pan.",
+        "mediaUrl": "/videos/lemonpasta_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Bring to a boil, then simmer, stirring occasionally.",
+        "mediaUrl": "/videos/lemonpasta_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Berry Smoothie Bowl",
     "description": "A thick and creamy smoothie bowl topped with fresh berries and granola.",
-    "mediaUrl": "./videos/smoothie_bowl.mp4",
+    "mediaUrl": "/videos/smoothie_bowl.mp4",
     "mediaType": "video",
     "durationSec": 15,
     "prepTime": 5,
     "cookTime": 0,
     "servings": 1,
-    "category": "Breakfast",
+    "category_name": "Breakfast",
     "ingredients": [
-      "Frozen Mixed Berries",
-      "Banana",
-      "Almond Milk",
-      "Granola",
-      "Fresh Berries for topping"
+      {
+        "name": "Frozen Mixed Berries",
+        "amount": "1 1/2 cups",
+        "imageUrl": "/icons/berries.png"
+      },
+      { "name": "Banana", "amount": "1", "imageUrl": "/icons/banana.png" }
     ],
-    "instructions": [
-      "Blend frozen berries, banana, and a splash of almond milk until thick and smooth.",
-      "Pour into a bowl.",
-      "Top with granola and fresh berries."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Blend frozen berries, banana, and a splash of almond milk until thick.",
+        "mediaUrl": "/videos/smoothie_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Pour into a bowl.",
+        "mediaUrl": "/videos/smoothie_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Cheesy Quesadilla",
     "description": "A quick and satisfying quesadilla, loaded with melted cheese and your favorite fillings.",
-    "mediaUrl": "./videos/quesadilla.mp4",
+    "mediaUrl": "/videos/quesadilla.mp4",
     "mediaType": "video",
     "durationSec": 12,
     "prepTime": 5,
     "cookTime": 5,
     "servings": 1,
-    "category": "Snack",
+    "category_name": "Snack",
     "ingredients": [
-      "Tortilla",
-      "Shredded Cheese",
-      "Optional: Chicken, Beans, Peppers"
+      {
+        "name": "Tortilla",
+        "amount": "1 large",
+        "imageUrl": "/icons/tortilla.png"
+      },
+      {
+        "name": "Shredded Cheese",
+        "amount": "1/2 cup",
+        "imageUrl": "/icons/cheese.png"
+      }
     ],
-    "instructions": [
-      "Place a tortilla in a dry pan over medium heat.",
-      "Sprinkle cheese and fillings on one half.",
-      "Fold the other half over and cook until golden brown and cheese is melted, flipping once."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Place a tortilla in a dry pan over medium heat.",
+        "mediaUrl": "/videos/quesadilla_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Sprinkle cheese and fillings on one half.",
+        "mediaUrl": "/videos/quesadilla_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Spaghetti Carbonara",
     "description": "A classic Roman pasta dish made with eggs, cheese, pancetta, and pepper.",
-    "mediaUrl": "./videos/carbonara.mp4",
+    "mediaUrl": "/videos/carbonara.mp4",
     "mediaType": "video",
     "durationSec": 35,
     "prepTime": 10,
     "cookTime": 15,
     "servings": 2,
-    "category": "Dinner",
+    "category_name": "Dinner",
     "ingredients": [
-      "Spaghetti",
-      "Eggs",
-      "Pecorino Romano Cheese",
-      "Pancetta",
-      "Black Pepper"
+      { "name": "Spaghetti", "amount": "200g", "imageUrl": "/icons/pasta.png" },
+      { "name": "Eggs", "amount": "2", "imageUrl": "/icons/eggs.png" }
     ],
-    "instructions": [
-      "Cook spaghetti.",
-      "While pasta cooks, fry pancetta until crisp.",
-      "Whisk eggs and cheese together.",
-      "Drain pasta, reserving some pasta water.",
-      "Quickly toss pasta with egg mixture, pancetta, and a splash of pasta water off the heat.",
-      "Serve with lots of black pepper."
-    ]
-  },
-  {
-    "name": "Banana Bread",
-    "description": "A moist and delicious banana bread, perfect for using up overripe bananas.",
-    "mediaUrl": "./videos/banana_bread.mp4",
-    "mediaType": "video",
-    "durationSec": 40,
-    "prepTime": 10,
-    "cookTime": 60,
-    "servings": 8,
-    "category": "Dessert",
-    "ingredients": [
-      "Overripe Bananas",
-      "Flour",
-      "Sugar",
-      "Egg",
-      "Melted Butter",
-      "Baking Soda"
-    ],
-    "instructions": [
-      "Mash bananas.",
-      "Mix in melted butter, sugar, and egg.",
-      "Whisk in flour and baking soda.",
-      "Pour into a loaf pan and bake at 175°C for about an hour."
-    ]
-  },
-  {
-    "name": "Greek Salad",
-    "description": "A refreshing salad with cucumbers, tomatoes, olives, and feta cheese.",
-    "mediaUrl": "./videos/greek_salad.mp4",
-    "mediaType": "video",
-    "durationSec": 20,
-    "prepTime": 15,
-    "cookTime": 0,
-    "servings": 4,
-    "category": "Lunch",
-    "ingredients": [
-      "Cucumber",
-      "Tomatoes",
-      "Red Onion",
-      "Kalamata Olives",
-      "Feta Cheese",
-      "Olive Oil",
-      "Lemon Juice"
-    ],
-    "instructions": [
-      "Chop all vegetables and add to a large bowl.",
-      "Crumble feta cheese over the top.",
-      "Drizzle with olive oil and lemon juice and toss to combine."
-    ]
-  },
-  {
-    "name": "Pesto Pasta",
-    "description": "A simple yet flavorful pasta dish tossed in a vibrant basil pesto sauce.",
-    "mediaUrl": "./videos/pesto_pasta.mp4",
-    "mediaType": "video",
-    "durationSec": 18,
-    "prepTime": 5,
-    "cookTime": 15,
-    "servings": 2,
-    "category": "Dinner",
-    "ingredients": [
-      "Pasta",
-      "Basil P pesto",
-      "Cherry Tomatoes",
-      "Parmesan Cheese"
-    ],
-    "instructions": [
-      "Cook pasta according to package directions.",
-      "Drain, reserving a small amount of pasta water.",
-      "Toss the hot pasta with pesto, adding a little pasta water to create a creamy sauce.",
-      "Stir in halved cherry tomatoes and top with Parmesan."
-    ]
-  },
-  {
-    "name": "French Toast",
-    "description": "Classic French toast with a custardy center and golden-brown crust.",
-    "mediaUrl": "./videos/french_toast.mp4",
-    "mediaType": "video",
-    "durationSec": 25,
-    "prepTime": 5,
-    "cookTime": 10,
-    "servings": 2,
-    "category": "Breakfast",
-    "ingredients": [
-      "Bread",
-      "Eggs",
-      "Milk",
-      "Cinnamon",
-      "Butter",
-      "Maple Syrup"
-    ],
-    "instructions": [
-      "Whisk together eggs, milk, and cinnamon.",
-      "Dip bread slices into the egg mixture.",
-      "Cook in a buttered pan over medium heat until golden brown on both sides.",
-      "Serve with maple syrup."
-    ]
-  },
-  {
-    "name": "Chicken Alfredo",
-    "description": "Creamy and decadent chicken alfredo pasta that's pure comfort food.",
-    "mediaUrl": "./videos/chicken_alfredo.mp4",
-    "mediaType": "video",
-    "durationSec": 38,
-    "prepTime": 10,
-    "cookTime": 20,
-    "servings": 4,
-    "category": "Dinner",
-    "ingredients": [
-      "Fettuccine",
-      "Chicken Breast",
-      "Heavy Cream",
-      "Butter",
-      "Garlic",
-      "Parmesan Cheese"
-    ],
-    "instructions": [
-      "Cook fettuccine.",
-      "Season and cook chicken breast, then slice.",
-      "In a saucepan, melt butter and cook garlic.",
-      "Stir in heavy cream and Parmesan until sauce is smooth.",
-      "Toss with pasta and top with chicken."
-    ]
-  },
-  {
-    "name": "Oatmeal Energy Balls",
-    "description": "No-bake energy balls that are perfect for a quick and healthy snack.",
-    "mediaUrl": "./videos/energy_balls.mp4",
-    "mediaType": "video",
-    "durationSec": 15,
-    "prepTime": 10,
-    "cookTime": 0,
-    "servings": 12,
-    "category": "Snack",
-    "ingredients": [
-      "Rolled Oats",
-      "Peanut Butter",
-      "Honey",
-      "Chocolate Chips",
-      "Flax Seeds"
-    ],
-    "instructions": [
-      "Combine all ingredients in a bowl.",
-      "Mix well.",
-      "Roll into bite-sized balls.",
-      "Refrigerate for at least 30 minutes before serving."
-    ]
-  },
-  {
-    "name": "Beef Tacos",
-    "description": "Classic ground beef tacos, seasoned to perfection and served in crispy shells.",
-    "mediaUrl": "./videos/beef_tacos.mp4",
-    "mediaType": "video",
-    "durationSec": 30,
-    "prepTime": 10,
-    "cookTime": 15,
-    "servings": 4,
-    "category": "Dinner",
-    "ingredients": [
-      "Ground Beef",
-      "Taco Seasoning",
-      "Taco Shells",
-      "Lettuce",
-      "Tomato",
-      "Cheese",
-      "Salsa"
-    ],
-    "instructions": [
-      "Brown the ground beef in a skillet; drain fat.",
-      "Stir in taco seasoning and a little water; simmer.",
-      "Warm the taco shells.",
-      "Assemble tacos with beef and your favorite toppings."
-    ]
-  },
-  {
-    "name": "Classic Pancakes",
-    "description": "Fluffy, golden pancakes made from scratch, ready for your favorite toppings.",
-    "mediaUrl": "./videos/pancakes.mp4",
-    "mediaType": "video",
-    "durationSec": 20,
-    "prepTime": 5,
-    "cookTime": 15,
-    "servings": 4,
-    "category": "Breakfast",
-    "ingredients": ["Flour", "Milk", "Egg", "Sugar", "Baking Powder", "Butter"],
-    "instructions": [
-      "Whisk together dry ingredients.",
-      "In a separate bowl, whisk together milk and egg, then stir in melted butter.",
-      "Pour wet ingredients into dry and mix until just combined.",
-      "Cook on a hot, greased griddle until bubbles form, then flip."
-    ]
-  },
-  {
-    "name": "Black Bean Burgers",
-    "description": "Hearty and flavorful vegetarian burgers made from black beans and spices.",
-    "mediaUrl": "./videos/bean_burger.mp4",
-    "mediaType": "video",
-    "durationSec": 32,
-    "prepTime": 15,
-    "cookTime": 10,
-    "servings": 4,
-    "category": "Dinner",
-    "ingredients": [
-      "Canned Black Beans",
-      "Breadcrumbs",
-      "Onion",
-      "Garlic",
-      "Cumin",
-      "Chili Powder",
-      "Burger Buns"
-    ],
-    "instructions": [
-      "Mash black beans in a bowl.",
-      "Mix in breadcrumbs, finely chopped onion, garlic, and spices.",
-      "Form into patties.",
-      "Cook in a lightly oiled pan for 5 minutes per side."
-    ]
-  },
-  {
-    "name": "Mango Sticky Rice",
-    "description": "A classic Thai dessert with sweet sticky rice, fresh mango, and a coconut sauce.",
-    "mediaUrl": "./videos/mango_sticky_rice.mp4",
-    "mediaType": "video",
-    "durationSec": 28,
-    "prepTime": 10,
-    "cookTime": 25,
-    "servings": 2,
-    "category": "Dessert",
-    "ingredients": [
-      "Glutinous Rice (Sticky Rice)",
-      "Coconut Milk",
-      "Sugar",
-      "Salt",
-      "Fresh Mango"
-    ],
-    "instructions": [
-      "Soak and steam the sticky rice.",
-      "While it's steaming, heat coconut milk, sugar, and salt in a saucepan until dissolved.",
-      "Pour half the coconut mixture over the hot cooked rice and let it absorb.",
-      "Serve the sweet rice with fresh mango slices and the remaining coconut sauce."
-    ]
-  },
-  {
-    "name": "Cottage Cheese Toast",
-    "description": "A high-protein and customizable toast that's creamy and delicious.",
-    "mediaUrl": "./videos/cottage_cheese_toast.mp4",
-    "mediaType": "video",
-    "durationSec": 15,
-    "prepTime": 3,
-    "cookTime": 2,
-    "servings": 1,
-    "category": "Snack",
-    "ingredients": ["Bread", "Cottage Cheese", "Honey", "Berries"],
-    "instructions": [
-      "Toast the bread.",
-      "Spread a thick layer of cottage cheese on top.",
-      "Drizzle with honey and top with fresh berries."
-    ]
-  },
-  {
-    "name": "Shrimp Scampi",
-    "description": "A quick and elegant pasta dish with shrimp in a garlic, white wine, and butter sauce.",
-    "mediaUrl": "./videos/shrimp_scampi.mp4",
-    "mediaType": "video",
-    "durationSec": 25,
-    "prepTime": 10,
-    "cookTime": 15,
-    "servings": 2,
-    "category": "Dinner",
-    "ingredients": [
-      "Linguine",
-      "Shrimp",
-      "Garlic",
-      "White Wine",
-      "Butter",
-      "Lemon Juice",
-      "Parsley"
-    ],
-    "instructions": [
-      "Cook linguine.",
-      "In a large skillet, melt butter and cook garlic until fragrant.",
-      "Add shrimp and cook until pink.",
-      "Deglaze the pan with white wine and lemon juice.",
-      "Toss with cooked pasta and garnish with parsley."
-    ]
-  },
-  {
-    "name": "Baked Feta Soup",
-    "description": "A creamy, tangy soup inspired by the viral baked feta pasta.",
-    "mediaUrl": "./videos/baked_feta_soup.mp4",
-    "mediaType": "video",
-    "durationSec": 30,
-    "prepTime": 5,
-    "cookTime": 30,
-    "servings": 4,
-    "category": "Lunch",
-    "ingredients": [
-      "Block of Feta Cheese",
-      "Cherry Tomatoes",
-      "Onion",
-      "Garlic",
-      "Vegetable Broth",
-      "Olive Oil"
-    ],
-    "instructions": [
-      "In a baking dish, place the block of feta in the center, surrounded by tomatoes, onion, and garlic.",
-      "Drizzle with olive oil and bake at 200°C for 25 minutes.",
-      "Transfer the baked ingredients to a pot, add vegetable broth, and blend until smooth."
-    ]
-  },
-  {
-    "name": "Mug Brownie",
-    "description": "A single-serving brownie made in a mug in the microwave in just a few minutes.",
-    "mediaUrl": "./videos/mug_brownie.mp4",
-    "mediaType": "video",
-    "durationSec": 10,
-    "prepTime": 5,
-    "cookTime": 2,
-    "servings": 1,
-    "category": "Dessert",
-    "ingredients": [
-      "Flour",
-      "Sugar",
-      "Cocoa Powder",
-      "Milk",
-      "Vegetable Oil",
-      "A few Chocolate Chips"
-    ],
-    "instructions": [
-      "In a mug, mix together the dry ingredients.",
-      "Stir in the milk and oil until you have a smooth batter.",
-      "Add a few chocolate chips.",
-      "Microwave on high for 60-90 seconds."
-    ]
-  },
-  {
-    "name": "Egg Fried Rice",
-    "description": "A classic takeout favorite that's easy to make at home with leftover rice.",
-    "mediaUrl": "./videos/egg_fried_rice.mp4",
-    "mediaType": "video",
-    "durationSec": 28,
-    "prepTime": 5,
-    "cookTime": 10,
-    "servings": 2,
-    "category": "Dinner",
-    "ingredients": [
-      "Cooked Rice (day-old is best)",
-      "Eggs",
-      "Soy Sauce",
-      "Sesame Oil",
-      "Frozen Peas and Carrots",
-      "Scallions"
-    ],
-    "instructions": [
-      "Scramble eggs in a hot wok or skillet and set aside.",
-      "Add a bit more oil and stir-fry the peas and carrots.",
-      "Add the rice, breaking it up.",
-      "Stir in soy sauce, sesame oil, and the scrambled eggs.",
-      "Mix in chopped scallions before serving."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Cook spaghetti. While it cooks, fry pancetta until crisp.",
+        "mediaUrl": "/videos/carbonara_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Whisk eggs and cheese together in a large bowl.",
+        "mediaUrl": "/videos/carbonara_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "The Viral Feta Pasta",
     "description": "The incredibly popular and easy TikTok recipe where you bake a block of feta with cherry tomatoes to create a creamy, tangy pasta sauce.",
-    "mediaUrl": "./videos/feta_pasta.mp4",
+    "mediaUrl": "/videos/feta_pasta.mp4",
     "mediaType": "video",
-    "durationSec": 15,
     "prepTime": 5,
     "cookTime": 30,
     "servings": 4,
-    "category": "Viral",
+    "category_name": "Viral",
     "ingredients": [
-      "Block of Feta Cheese",
-      "Cherry Tomatoes",
-      "Pasta",
-      "Garlic",
-      "Olive Oil",
-      "Red Pepper Flakes",
-      "Fresh Basil"
+      {
+        "name": "Feta Cheese",
+        "amount": "1 block",
+        "imageUrl": "/icons/feta.png"
+      },
+      {
+        "name": "Cherry Tomatoes",
+        "amount": "2 pints",
+        "imageUrl": "/icons/tomatoes.png"
+      }
     ],
-    "instructions": [
-      "Place feta in the center of a baking dish, surround with tomatoes and garlic.",
-      "Drizzle generously with olive oil and season.",
-      "Bake at 200°C for 30 minutes until tomatoes burst and feta is soft.",
-      "Meanwhile, cook pasta.",
-      "Mash the feta and tomatoes to create a sauce, toss with pasta and fresh basil."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Place feta in a baking dish, surround with tomatoes and garlic.",
+        "mediaUrl": "/videos/feta_pasta_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Drizzle generously with olive oil and season. Bake at 200°C for 30 minutes.",
+        "mediaUrl": "/videos/feta_pasta_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Cloud Bread",
     "description": "A fluffy, meringue-like 'bread' made with just three ingredients. A fun and visually stunning low-carb treat.",
-    "mediaUrl": "./videos/cloud_bread.mp4",
+    "mediaUrl": "/videos/cloud_bread.mp4",
     "mediaType": "video",
-    "durationSec": 20,
     "prepTime": 10,
     "cookTime": 25,
     "servings": 2,
-    "category": "Viral",
+    "category_name": "Viral",
     "ingredients": [
-      "Egg Whites",
-      "Sugar",
-      "Cornstarch",
-      "Optional: Blue Food Coloring"
+      { "name": "Egg Whites", "amount": "3", "imageUrl": "/icons/eggs.png" },
+      { "name": "Sugar", "amount": "2 tbsp", "imageUrl": "/icons/sugar.png" }
     ],
-    "instructions": [
-      "Whip egg whites until foamy.",
-      "Gradually add sugar and cornstarch, continuing to whip until stiff, glossy peaks form.",
-      "If using, fold in food coloring.",
-      "Scoop the meringue into a dome shape on a baking sheet.",
-      "Bake at 150°C for 25 minutes."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Whip egg whites until foamy.",
+        "mediaUrl": "/videos/cloud_bread_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Gradually add sugar and cornstarch, continuing to whip until stiff, glossy peaks form.",
+        "mediaUrl": "/videos/cloud_bread_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Dalgona Coffee (Whipped Coffee)",
     "description": "The coffee craze that swept the internet. A velvety, whipped coffee topping served over milk.",
-    "mediaUrl": "./videos/dalgona_coffee.mp4",
+    "mediaUrl": "/videos/dalgona_coffee.mp4",
     "mediaType": "video",
-    "durationSec": 18,
     "prepTime": 5,
     "cookTime": 0,
     "servings": 1,
-    "category": "Viral",
-    "ingredients": ["Instant Coffee", "Sugar", "Hot Water", "Milk"],
-    "instructions": [
-      "In a bowl, combine equal parts instant coffee, sugar, and hot water (e.g., 2 tablespoons of each).",
-      "Whip with a hand mixer or by hand until it's light, airy, and forms soft peaks.",
-      "Fill a glass with milk and ice.",
-      "Spoon the whipped coffee mixture on top."
+    "category_name": "Viral",
+    "ingredients": [
+      {
+        "name": "Instant Coffee",
+        "amount": "2 tbsp",
+        "imageUrl": "/icons/coffee.png"
+      },
+      { "name": "Sugar", "amount": "2 tbsp", "imageUrl": "/icons/sugar.png" }
+    ],
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Combine instant coffee, sugar, and hot water in a bowl.",
+        "mediaUrl": "/videos/dalgona_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Whip with a hand mixer until light, airy, and it forms soft peaks.",
+        "mediaUrl": "/videos/dalgona_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Mini Pancake Cereal",
     "description": "A playful breakfast trend where you make tiny, dime-sized pancakes and serve them in a bowl with milk and syrup, just like cereal.",
-    "mediaUrl": "./videos/pancake_cereal.mp4",
+    "mediaUrl": "/videos/pancake_cereal.mp4",
     "mediaType": "video",
-    "durationSec": 22,
     "prepTime": 10,
     "cookTime": 15,
     "servings": 2,
-    "category": "Viral",
+    "category_name": "Viral",
     "ingredients": [
-      "Pancake Mix (or from scratch)",
-      "Milk",
-      "Butter",
-      "Maple Syrup"
+      {
+        "name": "Pancake Mix",
+        "amount": "1 cup",
+        "imageUrl": "/icons/pancake-mix.png"
+      },
+      { "name": "Milk", "amount": "3/4 cup", "imageUrl": "/icons/milk.png" }
     ],
-    "instructions": [
-      "Prepare your favorite pancake batter.",
-      "Pour the batter into a squeeze bottle or a piping bag.",
-      "On a hot, greased non-stick skillet, squeeze out tiny dots of batter.",
-      "Cook for about a minute until bubbles form, then flip and cook for another 30 seconds.",
-      "Serve in a bowl with butter, syrup, and milk."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Prepare your pancake batter and pour it into a squeeze bottle.",
+        "mediaUrl": "/videos/pancake_cereal_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "On a hot, greased skillet, squeeze out tiny dots of batter.",
+        "mediaUrl": "/videos/pancake_cereal_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   },
   {
     "name": "Gigi Hadid's Spicy Vodka Pasta",
     "description": "A creamy, spicy, and delicious pasta sauce made famous by Gigi Hadid. The vodka helps to balance the richness of the cream.",
-    "mediaUrl": "./videos/gigi_hadid_pasta.mp4",
+    "mediaUrl": "https://res.cloudinary.com/dikyba2uk/video/upload/v1758094763/Parmesan_u%CC%88ber_Spaghetti_Bolognese_ea6don.mp4",
     "mediaType": "video",
-    "durationSec": 28,
     "prepTime": 10,
     "cookTime": 20,
     "servings": 3,
-    "category": "Viral",
+    "category_name": "Viral",
     "ingredients": [
-      "Pasta (Shells or Orecchiette)",
-      "Olive Oil",
-      "Garlic",
-      "Onion",
-      "Tomato Paste",
-      "Heavy Cream",
-      "Vodka",
-      "Red Pepper Flakes",
-      "Butter",
-      "Parmesan Cheese"
+      {
+        "name": "Pasta (Shells)",
+        "amount": "250g",
+        "imageUrl": "/icons/pasta.png"
+      },
+      {
+        "name": "Tomato Paste",
+        "amount": "2 tbsp",
+        "imageUrl": "/icons/tomato-paste.png"
+      }
     ],
-    "instructions": [
-      "Cook pasta.",
-      "In a large saucepan, sauté onion and garlic in olive oil.",
-      "Add tomato paste and cook until darkened.",
-      "Stir in vodka and cook it off, then add heavy cream and red pepper flakes.",
-      "Simmer until the sauce thickens.",
-      "Stir in butter and Parmesan cheese, then add the cooked pasta and a splash of pasta water."
+    "instructionSteps": [
+      {
+        "stepNumber": 1,
+        "text": "Cook pasta. Sauté onion and garlic in olive oil.",
+        "mediaUrl": "/videos/vodka_pasta_step1.mp4",
+        "mediaType": "video"
+      },
+      {
+        "stepNumber": 2,
+        "text": "Add tomato paste and cook until darkened. Stir in vodka.",
+        "mediaUrl": "/videos/vodka_pasta_step2.mp4",
+        "mediaType": "video"
+      }
     ]
   }
 ]

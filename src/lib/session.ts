@@ -53,7 +53,7 @@ export async function getSession() {
     },
     include: {
       user: {
-        select: { id: true, email: true, username: true },
+        select: { id: true, email: true, username: true, profileImageUrl: true },
       },
     },
   });

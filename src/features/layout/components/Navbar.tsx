@@ -9,7 +9,7 @@ import NavbarClient from "./NavbarClient";
  * while still rendering interactive UI in client
  */
 export default async function Navbar() {
-  // Fetch the current session (userId, roles, etc.)
+  // Fetch the current session
   const session = await getSession();
 
   // Render the client side Navbar with session data as props
